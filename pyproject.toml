@@ -1,0 +1,28 @@
+[project]
+name = "font-merge"
+version = "1.0.0"
+description = "Font merging tool"
+requires-python = ">=3.14"
+dependencies = [
+    "fonttools>=4.62.1",
+]
+
+[tool.font-merge]
+# 中文字体（基础字体，在前）
+chinese-fonts = [
+    { name = "MicrosoftYaHei", path = "C:/Windows/Fonts/msyh.ttc", index = 0 },
+    { name = "MicrosoftYaHeiUI", path = "C:/Windows/Fonts/msyh.ttc", index = 1 },
+    { name = "SimSun", path = "C:/Windows/Fonts/simsun.ttc", index = 0 },
+    { name = "MicrosoftMHei", path = "C:/Windows/Fonts/msjh.ttc", index = 0 },
+]
+
+# 英文字体（合并字体，在后）
+english-fonts = [
+    { name = "CascadiaMono", path = "C:/Windows/Fonts/CascadiaMono.ttf" },
+    { name = "CascadiaCode", path = "C:/Windows/Fonts/CascadiaCode.ttf" },
+    { name = "Consolas", path = "C:/Windows/Fonts/consola.ttf" },
+    { name = "ConsolasBold", path = "C:/Windows/Fonts/consolab.ttf" },
+]
+
+# 输出目录
+output-dir = "output"
