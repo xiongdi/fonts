@@ -236,14 +236,6 @@ def merge(en_path: str, zh_path: str, zh_index: int, output_name: str, output_di
         print(f"Save OTF: {otf}")
         new_font.save(otf)
 
-        # 保存 WOFF2
-        woff = os.path.join(output_dir, f"{output_name}.woff2")
-        print(f"Save WOFF2: {woff}")
-        try:
-            run_subset(['pyftsubset', otf, '--flavor=woff2', f'--output-file={woff}'])
-        except RuntimeError:
-            print(f"  (WOFF2 skipped)")
-
         print(f"Done! ({format_size(otf):.1f} KB)")
 
     finally:
