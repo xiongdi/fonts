@@ -19,13 +19,28 @@ chinese-fonts = [
 ]
 
 # 英文字体（合并字体，在后）
-# 支持本地路径或远程URL
+# 支持本地路径或 Google Fonts URL (https://fonts.google.com/download?family=xxx)
 english-fonts = [
     # Windows 内置
     { name = "CascadiaMono", path = "C:/Windows/Fonts/CascadiaMono.ttf" },
     { name = "CascadiaCode", path = "C:/Windows/Fonts/CascadiaCode.ttf" },
     { name = "Consolas", path = "C:/Windows/Fonts/consola.ttf" },
     { name = "ConsolasBold", path = "C:/Windows/Fonts/consolab.ttf" },
+    # Google Fonts 等宽字体
+    { name = "JetBrainsMono", path = "https://fonts.google.com/download?family=JetBrains%20Mono" },
+    { name = "FiraCode", path = "https://fonts.google.com/download?family=Fira%20Code" },
+    { name = "RobotoMono", path = "https://fonts.google.com/download?family=Roboto%20Mono" },
+    { name = "SourceCodePro", path = "https://fonts.google.com/download?family=Source%20Code%20Pro" },
+    { name = "IBM Plex Mono", path = "https://fonts.google.com/download?family=IBM%20Plex%20Mono" },
+    { name = "UbuntuMono", path = "https://fonts.google.com/download?family=Ubuntu%20Mono" },
+    { name = "SpaceMono", path = "https://fonts.google.com/download?family=Space%20Mono" },
+    { name = "Inconsolata", path = "https://fonts.google.com/download?family=Inconsolata" },
+    { name = "PT Mono", path = "https://fonts.google.com/download?family=PT%20Mono" },
+    { name = "OverpassMono", path = "https://fonts.google.com/download?family=Overpass%20Mono" },
+    { name = "AnonymousPro", path = "https://fonts.google.com/download?family=Anonymous%20Pro" },
+    { name = "DroidSansMono", path = "https://fonts.google.com/download?family=Droid%20Sans%20Mono" },
+    { name = "Cousine", path = "https://fonts.google.com/download?family=Cousine" },
+    { name = "LiberationMono", path = "https://fonts.google.com/download?family=Liberation%20Mono" },
 ]
 
 # 输出目录

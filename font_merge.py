@@ -24,8 +24,15 @@ def is_url(path: str) -> bool:
     return path.startswith('http://') or path.startswith('https://')
 
 
-def get_font_name_from_url(url: str) -> str:
+def get_font_name_from_url(url: str) -> str | None:
     """从 URL 提取字体名称"""
+    # Google Fonts URL
+    if 'fonts.google.com' in url:
+        import urllib.parse
+        parsed = urllib.parse.parse_qs(urllib.parse.urlparse(url).query)
+        if 'family' in parsed:
+            return parsed['family'][0].replace('%20', ' ')
+
     # 常见等宽字体映射
     name_map = {
         'JetBrainsMono': 'JetBrains Mono',
@@ -33,6 +40,15 @@ def get_font_name_from_url(url: str) -> str:
         'SourceCodePro': 'Source Code Pro',
         'RobotoMono': 'Roboto Mono',
         'IBMPlexMono': 'IBM Plex Mono',
+        'IBM Plex Mono': 'IBM Plex Mono',
+        'UbuntuMono': 'Ubuntu Mono',
+        'SpaceMono': 'Space Mono',
+        'Inconsolata': 'Inconsolata',
+        'PT Mono': 'PT Mono',
+        'OverpassMono': 'Overpass Mono',
+        'AnonymousPro': 'Anonymous Pro',
+        'DroidSansMono': 'Droid Sans Mono',
+        'LiberationMono': 'Liberation Mono',
     }
     for key, name in name_map.items():
         if key in url:
@@ -43,51 +59,98 @@ def get_font_name_from_url(url: str) -> str:
 def download_and_extract(url: str, cache_dir: str) -> str | None:
     """下载远程字体 ZIP 并返回 TTF 路径"""
     os.makedirs(cache_dir, exist_ok=True)
+    font_name = get_font_name_from_url(url)
 
-    # 从 URL 生成缓存文件名
+    # Google Fonts 直接下载单个字体文件
+    if 'fonts.google.com' in url:
+        # 生成缓存文件名
+        safe_name = font_name.replace(' ', '_') if font_name else 'font'
+        cached_ttf = os.path.join(cache_dir, f"{safe_name}.ttf")
+
+        if not os.path.exists(cached_ttf):
+            print(f"  Downloading: {font_name or 'font'}...")
+
+            # 重试机制
+            for attempt in range(3):
+                try:
+                    with httpx.stream('GET', url, follow_redirects=True, timeout=60.0) as r:
+                        r.raise_for_status()
+                        content_type = r.headers.get('content-type', '')
+
+                        # 根据 Content-Type 判断是 ZIP 还是 TTF/OTF
+                        if 'zip' in content_type:
+                            # 下载为 ZIP
+                            zip_path = cached_ttf.replace('.ttf', '.zip')
+                            with open(zip_path, 'wb') as f:
+                                for chunk in r.iter_bytes(chunk_size=8192):
+                                    f.write(chunk)
+                            return extract_from_zip(zip_path, font_name)
+
+                        else:
+                            # 直接是字体文件
+                            with open(cached_ttf, 'wb') as f:
+                                for chunk in r.iter_bytes(chunk_size=8192):
+                                    f.write(chunk)
+                            return cached_ttf
+                except Exception as e:
+                    if attempt < 2:
+                        print(f"  Retry {attempt + 1}/3...")
+                        continue
+                    print(f"  Download failed: {e}")
+                    return None
+        return cached_ttf
+
+    # 其他 URL (ZIP 文件)
     filename = url.split('/')[-1].split('?')[0]
     cached_zip = os.path.join(cache_dir, filename)
 
-    # 下载
     if not os.path.exists(cached_zip):
         print(f"  Downloading: {filename}...")
-        try:
-            with httpx.stream('GET', url, follow_redirects=True) as r:
-                r.raise_for_status()
-                with open(cached_zip, 'wb') as f:
-                    for chunk in r.iter_bytes(chunk_size=8192):
-                        f.write(chunk)
-        except Exception as e:
-            print(f"  Download failed: {e}")
-            return None
+        for attempt in range(3):
+            try:
+                with httpx.stream('GET', url, follow_redirects=True, timeout=60.0) as r:
+                    r.raise_for_status()
+                    with open(cached_zip, 'wb') as f:
+                        for chunk in r.iter_bytes(chunk_size=8192):
+                            f.write(chunk)
+                    break
+            except Exception as e:
+                if attempt < 2:
+                    print(f"  Retry {attempt + 1}/3...")
+                    continue
+                print(f"  Download failed: {e}")
+                return None
 
-    # 解压
-    extract_dir = cached_zip.replace('.zip', '')
+    return extract_from_zip(cached_zip, font_name)
+
+
+def extract_from_zip(zip_path: str, font_name: str | None) -> str | None:
+    """从 ZIP 文件提取字体"""
+    extract_dir = zip_path.replace('.zip', '')
     if not os.path.exists(extract_dir):
         print(f"  Extracting...")
         try:
-            with zipfile.ZipFile(cached_zip, 'r') as zf:
+            with zipfile.ZipFile(zip_path, 'r') as zf:
                 zf.extractall(extract_dir)
         except Exception as e:
             print(f"  Extract failed: {e}")
             return None
 
-    # 查找 TTF 文件
-    font_name = get_font_name_from_url(url)
+    # 查找 TTF/OTF 文件
     for root, dirs, files in os.walk(extract_dir):
         for f in files:
             if f.endswith('.ttf') or f.endswith('.otf'):
                 # 如果知道字体名，匹配它
-                if font_name and font_name not in f:
+                if font_name and font_name.lower() not in f.lower():
                     continue
                 font_path = os.path.join(root, f)
                 # 优先选择 Regular 字体
                 if 'Regular' in f or '-Regular' in f:
                     return font_path
-                # 如果没有找到指定字体，返回第一个
                 if not font_name:
                     return font_path
-    # 如果没匹配到，返回第一个
+
+    # 返回第一个找到的字体
     for root, dirs, files in os.walk(extract_dir):
         for f in files:
             if f.endswith('.ttf') or f.endswith('.otf'):
