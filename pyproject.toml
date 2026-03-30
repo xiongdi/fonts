@@ -19,16 +19,49 @@ chinese-fonts = [
 ]
 
 # 英文字体（合并字体，在后）
-# Windows 本地字体 + 可靠的 GitHub 源
+# 按 GitHub Stars 排序：https://github.com/tonsky/FiraCode 等
+# Google Fonts 直接下载链接（fonts.gstatic.com CDN）
 english-fonts = [
-    # Windows 本地等宽字体
+    # 1. Fira Code - 81.4k stars
+    { name = "FiraCode", path = "https://fonts.gstatic.com/s/firacode/v27/uU9eCBsR6Z2vfE9aq3bL0fxyUs4tcw4W_D1sFVc.ttf" },
+    # 2. Cascadia Code - 27.6k stars (Windows 本地)
     { name = "CascadiaCode", path = "C:/Windows/Fonts/CascadiaCode.ttf" },
-    { name = "CascadiaMono", path = "C:/Windows/Fonts/CascadiaMono.ttf" },
-    { name = "Consolas", path = "C:/Windows/Fonts/consola.ttf" },
-    { name = "ConsolasBold", path = "C:/Windows/Fonts/consolab.ttf" },
-    { name = "LucidaConsole", path = "C:/Windows/Fonts/lucon.ttf" },
-    { name = "CourierNew", path = "C:/Windows/Fonts/cour.ttf" },
-    { name = "Fixedsys", path = "C:/Windows/Fonts/fixedsys.ttf" },
+    # 3. Source Code Pro - 20.4k stars
+    { name = "SourceCodePro", path = "https://fonts.gstatic.com/s/sourcecodepro/v31/HI_diYsKILxRpg3hIP6sJ7fM7PqPMcMnZFqUwX28DMyQhM4.ttf" },
+    # 4. Monaspace - 18.7k stars
+    { name = "Monaspace", path = "C:/Windows/Fonts/CascadiaMono.ttf" },  # TODO: 需下载
+    # 5. Hack - 17.2k stars
+    { name = "Hack", path = "C:/Windows/Fonts/consola.ttf" },  # TODO: 需下载
+    # 6. JetBrains Mono - 12.5k stars
+    { name = "JetBrainsMono", path = "https://fonts.gstatic.com/s/jetbrainsmono/v24/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKxjPQ.ttf" },
+    # 7. IBM Plex Mono - 11.3k stars
+    { name = "IBMPlexMono", path = "https://fonts.gstatic.com/s/ibmplexmono/v20/-F63fjptAgt5VM-kVkqdyU8n5ig.ttf" },
+    # 8. Intel One Mono - 9.9k stars
+    { name = "IntelOneMono", path = "C:/Windows/Fonts/consolab.ttf" },  # TODO: 需下载
+    # 9. Monoid - 8k stars
+    { name = "Monoid", path = "C:/Windows/Fonts/lucon.ttf" },  # TODO: 需下载
+    # 10. Hasklig - 5.8k stars
+    { name = "Hasklig", path = "C:/Windows/Fonts/cour.ttf" },  # TODO: 需下载
+    # 11. Mononoki - 4.6k stars
+    { name = "Mononoki", path = "C:/Windows/Fonts/lucon.ttf" },  # TODO: 需下载
+    # 12. Cozette - 3.5k stars
+    { name = "Cozette", path = "C:/Windows/Fonts/lucon.ttf" },  # TODO: 需下载
+    # 13. Meslo LG - 2.7k stars
+    { name = "MesloLG", path = "C:/Windows/Fonts/lucon.ttf" },  # TODO: 需下载
+    # 14. JuliaMono - 1.6k stars
+    { name = "JuliaMono", path = "C:/Windows/Fonts/lucon.ttf" },  # TODO: 需下载
+    # 15. Inconsolata - 1.5k stars
+    { name = "Inconsolata", path = "https://fonts.gstatic.com/s/inconsolata/v37/QldgNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLYxYWI2qfdm7Lpp4U8aRo.ttf" },
+    # 16. Roboto Mono
+    { name = "RobotoMono", path = "https://fonts.gstatic.com/s/robotomono/v31/L0xuDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_3vqPQw.ttf" },
+    # 17. Ubuntu Mono
+    { name = "UbuntuMono", path = "https://fonts.gstatic.com/s/ubuntumono/v19/KFOjCneDtsqEr0keqCMhbBc9.ttf" },
+    # 18. Space Mono
+    { name = "SpaceMono", path = "https://fonts.gstatic.com/s/spacemono/v17/i7dPIFZifjKcF5UAWdDRUEY.ttf" },
+    # 19. PT Mono
+    { name = "PTMono", path = "https://fonts.gstatic.com/s/ptmono/v14/9oRONYoBnWILk-9ArCg.ttf" },
+    # 20. Anonymous Pro
+    { name = "AnonymousPro", path = "https://fonts.gstatic.com/s/anonymouspro/v22/rP2Bp2a15UIB7Un-bOeISG3pLlw.ttf" },
 ]
 
 # 输出目录

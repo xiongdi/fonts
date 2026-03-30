@@ -61,8 +61,15 @@ def download_and_extract(url: str, cache_dir: str) -> str | None:
     os.makedirs(cache_dir, exist_ok=True)
     font_name = get_font_name_from_url(url)
 
-    # Google Fonts 直接下载单个字体文件
-    if 'fonts.google.com' in url:
+    # 从 URL 路径中提取字体名称（如 firacode, jetbrainsmono 等）
+    if not font_name and 'fonts.gstatic.com/s/' in url:
+        # URL 格式: https://fonts.gstatic.com/s/firacode/v27/xxx.ttf
+        match = url.split('fonts.gstatic.com/s/')[1].split('/')[0] if 'fonts.gstatic.com/s/' in url else None
+        if match:
+            font_name = match.replace('-', ' ').title().replace(' ', '')
+
+    # Google Fonts / fonts.gstatic.com 直接下载单个字体文件
+    if 'fonts.google.com' in url or 'fonts.gstatic.com' in url:
         # 生成缓存文件名
         safe_name = font_name.replace(' ', '_') if font_name else 'font'
         cached_ttf = os.path.join(cache_dir, f"{safe_name}.ttf")
