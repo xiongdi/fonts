@@ -5,10 +5,12 @@ description = "Font merging tool"
 requires-python = ">=3.14"
 dependencies = [
     "fonttools>=4.62.1",
+    "httpx>=0.27.0",
 ]
 
 [tool.font-merge]
 # 中文字体（基础字体，在前）
+# 支持本地路径或远程URL (https://...)
 chinese-fonts = [
     { name = "MicrosoftYaHei", path = "C:/Windows/Fonts/msyh.ttc", index = 0 },
     { name = "MicrosoftYaHeiUI", path = "C:/Windows/Fonts/msyh.ttc", index = 1 },
@@ -17,7 +19,9 @@ chinese-fonts = [
 ]
 
 # 英文字体（合并字体，在后）
+# 支持本地路径或远程URL
 english-fonts = [
+    # Windows 内置
     { name = "CascadiaMono", path = "C:/Windows/Fonts/CascadiaMono.ttf" },
     { name = "CascadiaCode", path = "C:/Windows/Fonts/CascadiaCode.ttf" },
     { name = "Consolas", path = "C:/Windows/Fonts/consola.ttf" },
@@ -26,3 +30,6 @@ english-fonts = [
 
 # 输出目录
 output-dir = "output"
+
+# 缓存目录 (用于下载的字体)
+cache-dir = "cache"

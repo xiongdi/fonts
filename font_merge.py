@@ -2,6 +2,8 @@
 """字体合并脚本 - 自动生成所有组合"""
 import tomllib
 import os, subprocess, tempfile, shutil
+import zipfile
+import httpx
 from fontTools.ttLib import TTFont
 from copy import deepcopy
 
@@ -15,6 +17,93 @@ def load_config():
     """从 pyproject.toml 加载配置"""
     with open('pyproject.toml', 'rb') as f:
         return tomllib.load(f)['tool']['font-merge']
+
+
+def is_url(path: str) -> bool:
+    """检查是否为远程 URL"""
+    return path.startswith('http://') or path.startswith('https://')
+
+
+def get_font_name_from_url(url: str) -> str:
+    """从 URL 提取字体名称"""
+    # 常见等宽字体映射
+    name_map = {
+        'JetBrainsMono': 'JetBrains Mono',
+        'FiraCode': 'Fira Code',
+        'SourceCodePro': 'Source Code Pro',
+        'RobotoMono': 'Roboto Mono',
+        'IBMPlexMono': 'IBM Plex Mono',
+    }
+    for key, name in name_map.items():
+        if key in url:
+            return name
+    return None
+
+
+def download_and_extract(url: str, cache_dir: str) -> str | None:
+    """下载远程字体 ZIP 并返回 TTF 路径"""
+    os.makedirs(cache_dir, exist_ok=True)
+
+    # 从 URL 生成缓存文件名
+    filename = url.split('/')[-1].split('?')[0]
+    cached_zip = os.path.join(cache_dir, filename)
+
+    # 下载
+    if not os.path.exists(cached_zip):
+        print(f"  Downloading: {filename}...")
+        try:
+            with httpx.stream('GET', url, follow_redirects=True) as r:
+                r.raise_for_status()
+                with open(cached_zip, 'wb') as f:
+                    for chunk in r.iter_bytes(chunk_size=8192):
+                        f.write(chunk)
+        except Exception as e:
+            print(f"  Download failed: {e}")
+            return None
+
+    # 解压
+    extract_dir = cached_zip.replace('.zip', '')
+    if not os.path.exists(extract_dir):
+        print(f"  Extracting...")
+        try:
+            with zipfile.ZipFile(cached_zip, 'r') as zf:
+                zf.extractall(extract_dir)
+        except Exception as e:
+            print(f"  Extract failed: {e}")
+            return None
+
+    # 查找 TTF 文件
+    font_name = get_font_name_from_url(url)
+    for root, dirs, files in os.walk(extract_dir):
+        for f in files:
+            if f.endswith('.ttf') or f.endswith('.otf'):
+                # 如果知道字体名，匹配它
+                if font_name and font_name not in f:
+                    continue
+                font_path = os.path.join(root, f)
+                # 优先选择 Regular 字体
+                if 'Regular' in f or '-Regular' in f:
+                    return font_path
+                # 如果没有找到指定字体，返回第一个
+                if not font_name:
+                    return font_path
+    # 如果没匹配到，返回第一个
+    for root, dirs, files in os.walk(extract_dir):
+        for f in files:
+            if f.endswith('.ttf') or f.endswith('.otf'):
+                return os.path.join(root, f)
+
+    return None
+
+
+def resolve_font_path(path: str, cache_dir: str) -> str | None:
+    """解析字体路径（本地或远程）"""
+    if is_url(path):
+        return download_and_extract(path, cache_dir)
+    elif os.path.exists(path):
+        return path
+    else:
+        return None
 
 
 def run_subset(args: list[str]):
@@ -103,6 +192,7 @@ def main():
     chinese_fonts = config['chinese-fonts']
     english_fonts = config['english-fonts']
     output_dir = config['output-dir']
+    cache_dir = config.get('cache-dir', 'cache')
 
     print("=" * 60)
     print("Font Merge Tool - Generate All Combinations")
@@ -110,17 +200,39 @@ def main():
 
     os.makedirs(output_dir, exist_ok=True)
 
-    total = len(chinese_fonts) * len(english_fonts)
+    # 解析中文字体路径（只需解析一次）
+    print("\nResolving Chinese fonts...")
+    resolved_zh = []
+    for zh in chinese_fonts:
+        path = resolve_font_path(zh['path'], cache_dir)
+        if path:
+            resolved_zh.append({**zh, 'resolved_path': path})
+            print(f"  {zh['name']}: {path}")
+        else:
+            print(f"  {zh['name']}: FAILED")
+
+    # 解析英文字体路径
+    print("\nResolving English fonts...")
+    resolved_en = []
+    for en in english_fonts:
+        path = resolve_font_path(en['path'], cache_dir)
+        if path:
+            resolved_en.append({**en, 'resolved_path': path})
+            print(f"  {en['name']}: {os.path.basename(path)}")
+        else:
+            print(f"  {en['name']}: FAILED")
+
+    total = len(resolved_zh) * len(resolved_en)
     current = 0
 
-    for zh in chinese_fonts:
-        for en in english_fonts:
+    for zh in resolved_zh:
+        for en in resolved_en:
             current += 1
             output_name = f"{zh['name']}+{en['name']}"
             print(f"\n[{current}/{total}] {output_name}")
 
             try:
-                merge(en['path'], zh['path'], zh['index'], output_name, output_dir)
+                merge(en['resolved_path'], zh['resolved_path'], zh['index'], output_name, output_dir)
             except Exception as e:
                 print(f"  Error: {e}")
 
