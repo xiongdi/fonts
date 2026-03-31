@@ -26,71 +26,34 @@ def is_url(path: str) -> bool:
 
 def get_font_name_from_url(url: str) -> str | None:
     """从 URL 提取字体名称"""
-    # Google Fonts URL
     if 'fonts.google.com' in url:
         import urllib.parse
         parsed = urllib.parse.parse_qs(urllib.parse.urlparse(url).query)
         if 'family' in parsed:
             return parsed['family'][0].replace('%20', ' ')
 
-    # GitHub releases - 从文件名提取
     if 'github.com' in url:
         filename = url.split('/')[-1]
-        # 移除版本号和扩展名
         name = filename.replace('.zip', '').replace('.ttf', '').replace('.otf', '')
-        # 常见模式: FontName-version, FontName_v1.0
         for sep in ['-', '_v', '-v']:
             if sep in name:
                 name = name.split(sep)[0]
         return name
 
-    # 字体名称映射
     name_map = {
-        # 英文等宽
         'JetBrainsMono': 'JetBrains Mono',
         'FiraCode': 'Fira Code',
-        'Fira_Code': 'Fira Code',
         'SourceCodePro': 'Source Code Pro',
-        'Source_Code_Pro': 'Source Code Pro',
-        'RobotoMono': 'Roboto Mono',
-        'Roboto_Mono': 'Roboto Mono',
         'IBMPlexMono': 'IBM Plex Mono',
-        'IBM_Plex_Mono': 'IBM Plex Mono',
-        'UbuntuMono': 'Ubuntu Mono',
-        'Ubuntu_Mono': 'Ubuntu Mono',
-        'SpaceMono': 'Space Mono',
-        'Space_Mono': 'Space Mono',
-        'Inconsolata': 'Inconsolata',
-        'PTMono': 'PT Mono',
-        'PT_Mono': 'PT Mono',
-        'OverpassMono': 'Overpass Mono',
-        'Overpass_Mono': 'Overpass Mono',
-        'AnonymousPro': 'Anonymous Pro',
-        'Anonymous_Pro': 'Anonymous Pro',
-        'DroidSansMono': 'Droid Sans Mono',
-        'Droid_Sans_Mono': 'Droid Sans Mono',
-        'LiberationMono': 'Liberation Mono',
-        'Liberation_Mono': 'Liberation Mono',
         'Monaspace': 'Monaspace',
         'Hack': 'Hack',
-        'Monoid': 'Monoid',
-        'Hasklig': 'Hasklig',
         'Mononoki': 'Mononoki',
-        'Cozette': 'Cozette',
-        'MesloLG': 'Meslo LG',
         'JuliaMono': 'Julia Mono',
         'IntelOneMono': 'Intel One Mono',
-        # 中文
         'SourceHanSansSC': 'Source Han Sans SC',
         'SourceHanSerifSC': 'Source Han Serif SC',
         'LXGWWenKai': 'LXGW WenKai',
-        'LXGWWenKaiMono': 'LXGW WenKai Mono',
         'SmileySans': 'Smiley Sans',
-        'ZCOOLQingKeHuangYou': 'ZCOOL QingKe HuangYou',
-        'ZCOOLXiaoWei': 'ZCOOL XiaoWei',
-        'MaShanZheng': 'Ma Shan Zheng',
-        'ZCOOLKuaiLe': 'ZCOOL KuaiLe',
-        'LongCang': 'Long Cang',
     }
     for key, name in name_map.items():
         if key.lower() in url.lower():
@@ -103,40 +66,33 @@ def download_and_extract(url: str, cache_dir: str) -> str | None:
     os.makedirs(cache_dir, exist_ok=True)
     font_name = get_font_name_from_url(url)
 
-    # 从 URL 路径中提取字体名称（如 firacode, jetbrainsmono 等）
     if not font_name and 'fonts.gstatic.com/s/' in url:
-        # URL 格式: https://fonts.gstatic.com/s/firacode/v27/xxx.ttf
         match = url.split('fonts.gstatic.com/s/')[1].split('/')[0] if 'fonts.gstatic.com/s/' in url else None
         if match:
             font_name = match.replace('-', ' ').title().replace(' ', '')
 
-    # Google Fonts / fonts.gstatic.com 直接下载单个字体文件
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+    }
+
     if 'fonts.google.com' in url or 'fonts.gstatic.com' in url:
-        # 生成缓存文件名
         safe_name = font_name.replace(' ', '_') if font_name else 'font'
         cached_ttf = os.path.join(cache_dir, f"{safe_name}.ttf")
 
         if not os.path.exists(cached_ttf):
             print(f"  Downloading: {font_name or 'font'}...")
-
-            # 重试机制
             for attempt in range(3):
                 try:
-                    with httpx.stream('GET', url, follow_redirects=True, timeout=60.0) as r:
+                    with httpx.stream('GET', url, headers=headers, follow_redirects=True, timeout=60.0) as r:
                         r.raise_for_status()
                         content_type = r.headers.get('content-type', '')
-
-                        # 根据 Content-Type 判断是 ZIP 还是 TTF/OTF
                         if 'zip' in content_type:
-                            # 下载为 ZIP
                             zip_path = cached_ttf.replace('.ttf', '.zip')
                             with open(zip_path, 'wb') as f:
                                 for chunk in r.iter_bytes(chunk_size=8192):
                                     f.write(chunk)
                             return extract_from_zip(zip_path, font_name)
-
                         else:
-                            # 直接是字体文件
                             with open(cached_ttf, 'wb') as f:
                                 for chunk in r.iter_bytes(chunk_size=8192):
                                     f.write(chunk)
@@ -149,7 +105,6 @@ def download_and_extract(url: str, cache_dir: str) -> str | None:
                     return None
         return cached_ttf
 
-    # 其他 URL (ZIP 文件)
     filename = url.split('/')[-1].split('?')[0]
     cached_zip = os.path.join(cache_dir, filename)
 
@@ -157,7 +112,7 @@ def download_and_extract(url: str, cache_dir: str) -> str | None:
         print(f"  Downloading: {filename}...")
         for attempt in range(3):
             try:
-                with httpx.stream('GET', url, follow_redirects=True, timeout=60.0) as r:
+                with httpx.stream('GET', url, headers=headers, follow_redirects=True, timeout=60.0) as r:
                     r.raise_for_status()
                     with open(cached_zip, 'wb') as f:
                         for chunk in r.iter_bytes(chunk_size=8192):
@@ -185,21 +140,31 @@ def extract_from_zip(zip_path: str, font_name: str | None) -> str | None:
             print(f"  Extract failed: {e}")
             return None
 
-    # 查找 TTF/OTF 文件
+    # First pass: look for Regular, try to match font name (looser matching)
+    candidates = []
     for root, dirs, files in os.walk(extract_dir):
         for f in files:
             if f.endswith('.ttf') or f.endswith('.otf'):
-                # 如果知道字体名，匹配它
-                if font_name and font_name.lower() not in f.lower():
-                    continue
                 font_path = os.path.join(root, f)
-                # 优先选择 Regular 字体
-                if 'Regular' in f or '-Regular' in f:
-                    return font_path
-                if not font_name:
-                    return font_path
+                # Check for regular weight
+                is_regular = 'Regular' in f or '-Regular' in f or 'normal' in f.lower()
+                # Check if font name matches (if we have one) - looser matching: only check if any part matches
+                matches_name = True
+                if font_name:
+                    # Strip leading numbers like "09_" from Source Han releases
+                    font_name_clean = ''.join(c for c in font_name.lower() if c.isalpha())
+                    f_clean = ''.join(c for c in f.lower() if c.isalpha())
+                    matches_name = font_name_clean in f_clean
+                if matches_name:
+                    candidates.append((is_regular, font_path))
+                    if is_regular:
+                        return font_path
 
-    # 返回第一个找到的字体
+    # If we have any candidates, return the first one
+    if candidates:
+        return candidates[0][1]
+
+    # Fallback: return any font found
     for root, dirs, files in os.walk(extract_dir):
         for f in files:
             if f.endswith('.ttf') or f.endswith('.otf'):
@@ -244,8 +209,6 @@ def merge(en_path: str, zh_path: str, zh_index: int, output_name: str, output_di
         run_subset(['pyftsubset', en_path, '--glyphs=*', f'--output-file={en_sub}'])
 
         en = TTFont(en_sub)
-
-        # 以中文字体为基础
         new_font = TTFont(zh_sub)
 
         # 删除不需要的垂直度量表
@@ -263,7 +226,7 @@ def merge(en_path: str, zh_path: str, zh_index: int, output_name: str, output_di
         for g in en['hmtx'].metrics:
             new_font['hmtx'].metrics[g] = en['hmtx'].metrics[g]
 
-        # 替换 cmap 中的英文字符 (只处理 ASCII 范围)
+        # 替换 cmap 中的英文字符
         en_cmap = en['cmap'].getBestCmap()
         for cmap in new_font['cmap'].tables:
             for cp in cmap.cmap.keys():
@@ -271,8 +234,6 @@ def merge(en_path: str, zh_path: str, zh_index: int, output_name: str, output_di
                     cmap.cmap[cp] = en_cmap[cp]
 
         new_font['maxp'].numGlyphs = len(new_font['glyf'].glyphs)
-
-        # 更新 hhea
         new_font['hhea'].numberOfHMetrics = new_font['maxp'].numGlyphs
 
         # 设置名称
@@ -282,11 +243,10 @@ def merge(en_path: str, zh_path: str, zh_index: int, output_name: str, output_di
             elif r.nameID == 4:
                 r.string = (output_name + ' Regular').encode('utf-16-be')
 
-        # 保存 OTF
+        # 保存
         otf = os.path.join(output_dir, f"{output_name}.otf")
         print(f"Save OTF: {otf}")
         new_font.save(otf)
-
         print(f"Done! ({format_size(otf):.1f} KB)")
 
     finally:
@@ -306,7 +266,6 @@ def main():
 
     os.makedirs(output_dir, exist_ok=True)
 
-    # 解析中文字体路径（只需解析一次）
     print("\nResolving Chinese fonts...")
     resolved_zh = []
     for zh in chinese_fonts:
@@ -314,11 +273,10 @@ def main():
         path = resolve_font_path(url, cache_dir)
         if path:
             resolved_zh.append({**zh, 'resolved_path': path})
-            print(f"  {zh['name']}: {path}")
+            print(f"  {zh['name']}: {os.path.basename(path)}")
         else:
             print(f"  {zh['name']}: FAILED")
 
-    # 解析英文字体路径
     print("\nResolving English fonts...")
     resolved_en = []
     for en in english_fonts:
@@ -338,7 +296,6 @@ def main():
             current += 1
             output_name = f"{zh['name']}+{en['name']}"
             print(f"\n[{current}/{total}] {output_name}")
-
             try:
                 merge(en['resolved_path'], zh['resolved_path'], zh.get('index', 0), output_name, output_dir)
             except Exception as e:
