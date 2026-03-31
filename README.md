@@ -24,11 +24,11 @@ python font_merge.py
 ```toml
 [tool.font-merge]
 chinese-fonts = [
-    { name = "LXGWWenKai", github = "https://github.com/lxgw/LxgwWenKai", download = "https://github.com/lxgw/LxgwWenKai/releases/download/v1.501/LxgwWenKai-Regular.ttf", stars = 23700 },
+    { name = "LXGWWenKai", github = "https://github.com/lxgw/LxgwWenKai", download = "...", stars = 23700 },
 ]
 
 english-fonts = [
-    { name = "FiraCode", github = "https://github.com/tonsky/FiraCode", download = "https://github.com/tonsky/FiraCode/releases/download/6.2/Fira_Code_v6.2.zip", stars = 81354 },
+    { name = "FiraCode", github = "https://github.com/tonsky/FiraCode", download = "...", stars = 81354 },
 ]
 
 output-dir = "output"
@@ -43,20 +43,20 @@ cache-dir = "cache"
 
 ## 已配置字体
 
-### 中文字体 (GitHub Stars 排名)
+### 中文字体 (5款)
 
-| 字体 | Stars | 仓库 |
-|------|-------|------|
+| 字体 | Stars | GitHub |
+|------|-------|--------|
 | 霞鹜文楷 LXGW WenKai | 23.7k | [lxgw/LxgwWenKai](https://github.com/lxgw/LxgwWenKai) |
 | 思源黑体 Source Han Sans | 16.4k | [adobe-fonts/source-han-sans](https://github.com/adobe-fonts/source-han-sans) |
 | 得意黑 Smiley Sans | 14.3k | [atelier-anchor/smiley-sans](https://github.com/atelier-anchor/smiley-sans) |
 | 思源宋体 Source Han Serif | 9.4k | [adobe-fonts/source-han-serif](https://github.com/adobe-fonts/source-han-serif) |
 | Noto CJK | 3.8k | [googlefonts/noto-cjk](https://github.com/googlefonts/noto-cjk) |
 
-### 英文等宽字体 (GitHub Stars 排名)
+### 英文等宽字体 (20款)
 
-| 字体 | Stars | 仓库 |
-|------|-------|------|
+| 字体 | Stars | GitHub |
+|------|-------|--------|
 | Fira Code | 81.4k | [tonsky/FiraCode](https://github.com/tonsky/FiraCode) |
 | Cascadia Code | 27.6k | [microsoft/cascadia-code](https://github.com/microsoft/cascadia-code) |
 | Maple Font | 24.8k | [subframe7536/maple-font](https://github.com/subframe7536/maple-font) |
@@ -67,8 +67,16 @@ cache-dir = "cache"
 | JetBrains Mono | 12.5k | [JetBrains/JetBrainsMono](https://github.com/JetBrains/JetBrainsMono) |
 | IBM Plex Mono | 11.3k | [IBM/plex](https://github.com/IBM/plex) |
 | Intel One Mono | 9.9k | [intel/intel-one-mono](https://github.com/intel/intel-one-mono) |
-
-[查看完整列表](pyproject.toml)
+| Monoid | 8.0k | [larsenwork/monoid](https://github.com/larsenwork/monoid) |
+| Fantasque Sans | 7.3k | [belluzj/fantasque-sans](https://github.com/belluzj/fantasque-sans) |
+| Hasklig | 5.8k | [i-tu/Hasklig](https://github.com/i-tu/Hasklig) |
+| Mononoki | 4.6k | [madmalik/mononoki](https://github.com/madmalik/mononoki) |
+| Cozette | 3.5k | [slavfox/Cozette](https://github.com/slavfox/Cozette) |
+| Geist Mono | 3.3k | [vercel/geist-font](https://github.com/vercel/geist-font) |
+| Meslo LG | 2.7k | [andreberg/Meslo-Font](https://github.com/andreberg/Meslo-Font) |
+| Evil Martians Mono | 2.7k | [evilmartians/mono](https://github.com/evilmartians/mono) |
+| JuliaMono | 1.6k | [cormullion/juliamono](https://github.com/cormullion/juliamono) |
+| Inconsolata | 1.5k | [googlefonts/Inconsolata](https://github.com/googlefonts/Inconsolata) |
 
 ## 依赖
 
