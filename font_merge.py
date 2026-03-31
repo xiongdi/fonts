@@ -33,25 +33,67 @@ def get_font_name_from_url(url: str) -> str | None:
         if 'family' in parsed:
             return parsed['family'][0].replace('%20', ' ')
 
-    # 常见等宽字体映射
+    # GitHub releases - 从文件名提取
+    if 'github.com' in url:
+        filename = url.split('/')[-1]
+        # 移除版本号和扩展名
+        name = filename.replace('.zip', '').replace('.ttf', '').replace('.otf', '')
+        # 常见模式: FontName-version, FontName_v1.0
+        for sep in ['-', '_v', '-v']:
+            if sep in name:
+                name = name.split(sep)[0]
+        return name
+
+    # 字体名称映射
     name_map = {
+        # 英文等宽
         'JetBrainsMono': 'JetBrains Mono',
         'FiraCode': 'Fira Code',
+        'Fira_Code': 'Fira Code',
         'SourceCodePro': 'Source Code Pro',
+        'Source_Code_Pro': 'Source Code Pro',
         'RobotoMono': 'Roboto Mono',
+        'Roboto_Mono': 'Roboto Mono',
         'IBMPlexMono': 'IBM Plex Mono',
-        'IBM Plex Mono': 'IBM Plex Mono',
+        'IBM_Plex_Mono': 'IBM Plex Mono',
         'UbuntuMono': 'Ubuntu Mono',
+        'Ubuntu_Mono': 'Ubuntu Mono',
         'SpaceMono': 'Space Mono',
+        'Space_Mono': 'Space Mono',
         'Inconsolata': 'Inconsolata',
-        'PT Mono': 'PT Mono',
+        'PTMono': 'PT Mono',
+        'PT_Mono': 'PT Mono',
         'OverpassMono': 'Overpass Mono',
+        'Overpass_Mono': 'Overpass Mono',
         'AnonymousPro': 'Anonymous Pro',
+        'Anonymous_Pro': 'Anonymous Pro',
         'DroidSansMono': 'Droid Sans Mono',
+        'Droid_Sans_Mono': 'Droid Sans Mono',
         'LiberationMono': 'Liberation Mono',
+        'Liberation_Mono': 'Liberation Mono',
+        'Monaspace': 'Monaspace',
+        'Hack': 'Hack',
+        'Monoid': 'Monoid',
+        'Hasklig': 'Hasklig',
+        'Mononoki': 'Mononoki',
+        'Cozette': 'Cozette',
+        'MesloLG': 'Meslo LG',
+        'JuliaMono': 'Julia Mono',
+        'IntelOneMono': 'Intel One Mono',
+        # 中文
+        'SourceHanSansSC': 'Source Han Sans SC',
+        'SourceHanSerifSC': 'Source Han Serif SC',
+        'LXGWWenKai': 'LXGW WenKai',
+        'LXGWWenKaiMono': 'LXGW WenKai Mono',
+        'SmileySans': 'Smiley Sans',
+        'ZCOOLQingKeHuangYou': 'ZCOOL QingKe HuangYou',
+        'ZCOOLXiaoWei': 'ZCOOL XiaoWei',
+        'MaShanZheng': 'Ma Shan Zheng',
+        'ZCOOLKuaiLe': 'ZCOOL KuaiLe',
+        'LongCang': 'Long Cang',
     }
     for key, name in name_map.items():
-        if key in url:
+        if key.lower() in url.lower():
             return name
     return None
 
@@ -266,7 +308,8 @@ def main():
     print("\nResolving Chinese fonts...")
     resolved_zh = []
     for zh in chinese_fonts:
-        path = resolve_font_path(zh['path'], cache_dir)
+        url = zh.get('download') or zh.get('path', '')
+        path = resolve_font_path(url, cache_dir)
         if path:
             resolved_zh.append({**zh, 'resolved_path': path})
             print(f"  {zh['name']}: {path}")
@@ -277,7 +320,8 @@ def main():
     print("\nResolving English fonts...")
     resolved_en = []
     for en in english_fonts:
-        path = resolve_font_path(en['path'], cache_dir)
+        url = en.get('download') or en.get('path', '')
+        path = resolve_font_path(url, cache_dir)
         if path:
             resolved_en.append({**en, 'resolved_path': path})
             print(f"  {en['name']}: {os.path.basename(path)}")
@@ -294,7 +338,7 @@ def main():
             print(f"\n[{current}/{total}] {output_name}")
 
             try:
-                merge(en['resolved_path'], zh['resolved_path'], zh['index'], output_name, output_dir)
+                merge(en['resolved_path'], zh['resolved_path'], zh.get('index', 0), output_name, output_dir)
             except Exception as e:
                 print(f"  Error: {e}")
 

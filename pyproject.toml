@@ -10,58 +10,63 @@ dependencies = [
 
 [tool.font-merge]
 # 中文字体（基础字体，在前）
-# 支持本地路径或远程URL (https://...)
+# GitHub Stars 前5简体中文字体
 chinese-fonts = [
-    { name = "MicrosoftYaHei", path = "C:/Windows/Fonts/msyh.ttc", index = 0 },
-    { name = "MicrosoftYaHeiUI", path = "C:/Windows/Fonts/msyh.ttc", index = 1 },
-    { name = "SimSun", path = "C:/Windows/Fonts/simsun.ttc", index = 0 },
-    { name = "MicrosoftMHei", path = "C:/Windows/Fonts/msjh.ttc", index = 0 },
+    # 1. LXGW WenKai 霞鹜文楷 - 23,700 stars
+    { name = "LXGWWenKai", github = "https://github.com/lxgw/LxgwWenKai", download = "https://github.com/lxgw/LxgwWenKai/releases/download/v1.501/LxgwWenKai-Regular.ttf", stars = 23700 },
+    # 2. Source Han Sans 思源黑体 - 16,400 stars
+    { name = "SourceHanSansSC", github = "https://github.com/adobe-fonts/source-han-sans", download = "https://github.com/adobe-fonts/source-han-sans/releases/download/2.004R/SourceHanSansSC.zip", stars = 16400 },
+    # 3. Smiley Sans 得意黑 - 14,300 stars
+    { name = "SmileySans", github = "https://github.com/atelier-anchor/smiley-sans", download = "https://github.com/atelier-anchor/smiley-sans/releases/download/v2.0.1/smiley-sans-v2.0.1.zip", stars = 14300 },
+    # 4. Source Han Serif 思源宋体 - 9,400 stars
+    { name = "SourceHanSerifSC", github = "https://github.com/adobe-fonts/source-han-serif", download = "https://github.com/adobe-fonts/source-han-serif/releases/download/2.003R/SourceHanSerifSC.zip", stars = 9400 },
+    # 5. Noto CJK (Google版思源字体) - 3,800 stars
+    { name = "NotoSansSC", github = "https://github.com/googlefonts/noto-cjk", download = "https://github.com/googlefonts/noto-cjk/releases/download/Sans2.004/03_NotoSansCJK-OTC.zip", stars = 3800 },
 ]
 
 # 英文字体（合并字体，在后）
-# 按 GitHub Stars 排序：https://github.com/tonsky/FiraCode 等
-# Google Fonts 直接下载链接（fonts.gstatic.com CDN）
+# GitHub Stars 前20等宽英文字体 (仅包含有GitHub仓库的)
 english-fonts = [
-    # 1. Fira Code - 81.4k stars
-    { name = "FiraCode", path = "https://fonts.gstatic.com/s/firacode/v27/uU9eCBsR6Z2vfE9aq3bL0fxyUs4tcw4W_D1sFVc.ttf" },
-    # 2. Cascadia Code - 27.6k stars (Windows 本地)
-    { name = "CascadiaCode", path = "C:/Windows/Fonts/CascadiaCode.ttf" },
-    # 3. Source Code Pro - 20.4k stars
-    { name = "SourceCodePro", path = "https://fonts.gstatic.com/s/sourcecodepro/v31/HI_diYsKILxRpg3hIP6sJ7fM7PqPMcMnZFqUwX28DMyQhM4.ttf" },
-    # 4. Monaspace - 18.7k stars
-    { name = "Monaspace", path = "C:/Windows/Fonts/CascadiaMono.ttf" },  # TODO: 需下载
-    # 5. Hack - 17.2k stars
-    { name = "Hack", path = "C:/Windows/Fonts/consola.ttf" },  # TODO: 需下载
-    # 6. JetBrains Mono - 12.5k stars
-    { name = "JetBrainsMono", path = "https://fonts.gstatic.com/s/jetbrainsmono/v24/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKxjPQ.ttf" },
-    # 7. IBM Plex Mono - 11.3k stars
-    { name = "IBMPlexMono", path = "https://fonts.gstatic.com/s/ibmplexmono/v20/-F63fjptAgt5VM-kVkqdyU8n5ig.ttf" },
-    # 8. Intel One Mono - 9.9k stars
-    { name = "IntelOneMono", path = "C:/Windows/Fonts/consolab.ttf" },  # TODO: 需下载
-    # 9. Monoid - 8k stars
-    { name = "Monoid", path = "C:/Windows/Fonts/lucon.ttf" },  # TODO: 需下载
-    # 10. Hasklig - 5.8k stars
-    { name = "Hasklig", path = "C:/Windows/Fonts/cour.ttf" },  # TODO: 需下载
-    # 11. Mononoki - 4.6k stars
-    { name = "Mononoki", path = "C:/Windows/Fonts/lucon.ttf" },  # TODO: 需下载
-    # 12. Cozette - 3.5k stars
-    { name = "Cozette", path = "C:/Windows/Fonts/lucon.ttf" },  # TODO: 需下载
-    # 13. Meslo LG - 2.7k stars
-    { name = "MesloLG", path = "C:/Windows/Fonts/lucon.ttf" },  # TODO: 需下载
-    # 14. JuliaMono - 1.6k stars
-    { name = "JuliaMono", path = "C:/Windows/Fonts/lucon.ttf" },  # TODO: 需下载
-    # 15. Inconsolata - 1.5k stars
-    { name = "Inconsolata", path = "https://fonts.gstatic.com/s/inconsolata/v37/QldgNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLYxYWI2qfdm7Lpp4U8aRo.ttf" },
-    # 16. Roboto Mono
-    { name = "RobotoMono", path = "https://fonts.gstatic.com/s/robotomono/v31/L0xuDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_3vqPQw.ttf" },
-    # 17. Ubuntu Mono
-    { name = "UbuntuMono", path = "https://fonts.gstatic.com/s/ubuntumono/v19/KFOjCneDtsqEr0keqCMhbBc9.ttf" },
-    # 18. Space Mono
-    { name = "SpaceMono", path = "https://fonts.gstatic.com/s/spacemono/v17/i7dPIFZifjKcF5UAWdDRUEY.ttf" },
-    # 19. PT Mono
-    { name = "PTMono", path = "https://fonts.gstatic.com/s/ptmono/v14/9oRONYoBnWILk-9ArCg.ttf" },
-    # 20. Anonymous Pro
-    { name = "AnonymousPro", path = "https://fonts.gstatic.com/s/anonymouspro/v22/rP2Bp2a15UIB7Un-bOeISG3pLlw.ttf" },
+    # 1. Fira Code - 81,354 stars
+    { name = "FiraCode", github = "https://github.com/tonsky/FiraCode", download = "https://github.com/tonsky/FiraCode/releases/download/6.2/Fira_Code_v6.2.zip", stars = 81354 },
+    # 2. Cascadia Code - 27,601 stars
+    { name = "CascadiaCode", github = "https://github.com/microsoft/cascadia-code", download = "https://github.com/microsoft/cascadia-code/releases/download/v2111.01/CascadiaCode-2111.01.zip", stars = 27601 },
+    # 3. Maple Font 枫叶字体 - 24,809 stars
+    { name = "MapleFont", github = "https://github.com/subframe7536/maple-font", download = "https://github.com/subframe7536/maple-font/releases/download/v7.1/MapleFont.zip", stars = 24809 },
+    # 4. Iosevka - 21,944 stars
+    { name = "Iosevka", github = "https://github.com/be5invis/Iosevka", download = "https://github.com/be5invis/Iosevka/releases/download/v33.2.0/PkgTTF-Iosevka.zip", stars = 21944 },
+    # 5. Source Code Pro - 20,382 stars
+    { name = "SourceCodePro", github = "https://github.com/adobe-fonts/source-code-pro", download = "https://github.com/adobe-fonts/source-code-pro/releases/download/2.042R/OTF.zip", stars = 20382 },
+    # 6. Monaspace - 18,713 stars
+    { name = "Monaspace", github = "https://github.com/githubnext/monaspace", download = "https://github.com/githubnext/monaspace/releases/download/v1.200/monaspace-v1.200.zip", stars = 18713 },
+    # 7. Hack - 17,186 stars
+    { name = "Hack", github = "https://github.com/source-foundry/Hack", download = "https://github.com/source-foundry/Hack/releases/download/v3.003/Hack-v3.003-ttf.zip", stars = 17186 },
+    # 8. JetBrains Mono - 12,544 stars
+    { name = "JetBrainsMono", github = "https://github.com/JetBrains/JetBrainsMono", download = "https://github.com/JetBrains/JetBrainsMono/releases/download/2.304/JetBrainsMono-2.304.zip", stars = 12544 },
+    # 9. IBM Plex Mono - 11,280 stars
+    { name = "IBMPlexMono", github = "https://github.com/IBM/plex", download = "https://github.com/IBM/plex/releases/download/v6.4.0/IBM-Plex-Mono-6.zip", stars = 11280 },
+    # 10. Intel One Mono - 9,880 stars
+    { name = "IntelOneMono", github = "https://github.com/intel/intel-one-mono", download = "https://github.com/intel/intel-one-mono/releases/download/V1.2.1/ttf.zip", stars = 9880 },
+    # 11. Monoid - 7,969 stars
+    { name = "Monoid", github = "https://github.com/larsenwork/monoid", download = "https://github.com/larsenwork/monoid/releases/download/0.61/Monoid.zip", stars = 7969 },
+    # 12. Fantasque Sans - 7,347 stars
+    { name = "FantasqueSans", github = "https://github.com/belluzj/fantasque-sans", download = "https://github.com/belluzj/fantasque-sans/releases/download/v1.8.0/FantasqueSansMono.zip", stars = 7347 },
+    # 13. Hasklig - 5,762 stars
+    { name = "Hasklig", github = "https://github.com/i-tu/Hasklig", download = "https://github.com/i-tu/Hasklig/releases/download/v1.0/Hasklig-1.0.zip", stars = 5762 },
+    # 14. Mononoki - 4,602 stars
+    { name = "Mononoki", github = "https://github.com/madmalik/mononoki", download = "https://github.com/madmalik/mononoki/releases/download/1.3/mononoki.zip", stars = 4602 },
+    # 15. Cozette - 3,505 stars
+    { name = "Cozette", github = "https://github.com/slavfox/Cozette", download = "https://github.com/slavfox/Cozette/releases/download/v.1.21.3/CozetteVector.zip", stars = 3505 },
+    # 16. Geist Font - 3,345 stars
+    { name = "GeistMono", github = "https://github.com/vercel/geist-font", download = "https://github.com/vercel/geist-font/releases/download/v1.2.0/Geist.Mono.zip", stars = 3345 },
+    # 17. Meslo LG - 2,717 stars
+    { name = "MesloLG", github = "https://github.com/andreberg/Meslo-Font", download = "https://github.com/andreberg/Meslo-Font/releases/download/v1.2.1/Meslo.LG.v1.2.1.zip", stars = 2717 },
+    # 18. Evil Martians Mono - 2,659 stars
+    { name = "EvilMartiansMono", github = "https://github.com/evilmartians/mono", download = "https://github.com/evilmartians/mono/releases/download/v1.0.0/evilmartians-mono.zip", stars = 2659 },
+    # 19. JuliaMono - 1,625 stars
+    { name = "JuliaMono", github = "https://github.com/cormullion/juliamono", download = "https://github.com/cormullion/juliamono/releases/download/v0.055/JuliaMono-ttf.zip", stars = 1625 },
+    # 20. Inconsolata - 1,532 stars
+    { name = "Inconsolata", github = "https://github.com/googlefonts/Inconsolata", download = "https://github.com/googlefonts/Inconsolata/releases/download/v3.0.0/Inconsolata-3.0.0.zip", stars = 1532 },
 ]
 
 # 输出目录
