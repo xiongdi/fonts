@@ -3,6 +3,7 @@
 import tomllib
 import os, subprocess, tempfile, shutil
 import zipfile
+import py7zr
 import httpx
 from fontTools.ttLib import TTFont
 from copy import deepcopy
@@ -50,10 +51,13 @@ def get_font_name_from_url(url: str) -> str | None:
         'Mononoki': 'Mononoki',
         'JuliaMono': 'Julia Mono',
         'IntelOneMono': 'Intel One Mono',
+        'Recursive': 'Recursive',
+        'VictorMono': 'Victor Mono',
         'SourceHanSansSC': 'Source Han Sans SC',
         'SourceHanSerifSC': 'Source Han Serif SC',
         'LXGWWenKai': 'LXGW WenKai',
-        'SmileySans': 'Smiley Sans',
+        'ZhuqueFangsong': 'Zhuque Fangsong',
+        'SarasaGothicSC': 'Sarasa Gothic SC',
     }
     for key, name in name_map.items():
         if key.lower() in url.lower():
@@ -91,7 +95,7 @@ def download_and_extract(url: str, cache_dir: str) -> str | None:
                             with open(zip_path, 'wb') as f:
                                 for chunk in r.iter_bytes(chunk_size=8192):
                                     f.write(chunk)
-                            return extract_from_zip(zip_path, font_name)
+                            return extract_archive(zip_path, font_name)
                         else:
                             with open(cached_ttf, 'wb') as f:
                                 for chunk in r.iter_bytes(chunk_size=8192):
@@ -125,7 +129,30 @@ def download_and_extract(url: str, cache_dir: str) -> str | None:
                 print(f"  Download failed: {e}")
                 return None
 
-    return extract_from_zip(cached_zip, font_name)
+    return extract_archive(cached_zip, font_name)
+
+
+def extract_archive(archive_path: str, font_name: str | None) -> str | None:
+    """从压缩包（ZIP/7z）提取字体"""
+    if archive_path.endswith('.7z'):
+        return extract_from_7z(archive_path, font_name)
+    else:
+        return extract_from_zip(archive_path, font_name)
+
+
+def extract_from_7z(archive_path: str, font_name: str | None) -> str | None:
+    """从 7z 文件提取字体"""
+    extract_dir = archive_path.replace('.7z', '')
+    if not os.path.exists(extract_dir):
+        print(f"  Extracting 7z...")
+        try:
+            with py7zr.SevenZipFile(archive_path, 'r') as szf:
+                szf.extractall(extract_dir)
+        except Exception as e:
+            print(f"  Extract failed: {e}")
+            return None
+
+    return find_font_file(extract_dir, font_name)
 
 
 def extract_from_zip(zip_path: str, font_name: str | None) -> str | None:
@@ -140,6 +167,11 @@ def extract_from_zip(zip_path: str, font_name: str | None) -> str | None:
             print(f"  Extract failed: {e}")
             return None
 
+    return find_font_file(extract_dir, font_name)
+
+
+def find_font_file(extract_dir: str, font_name: str | None) -> str | None:
+    """在解压目录中查找字体文件"""
     # First pass: look for Regular, try to match font name (looser matching)
     candidates = []
     for root, dirs, files in os.walk(extract_dir):
