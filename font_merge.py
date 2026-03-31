@@ -132,37 +132,25 @@ def download_and_extract(url: str, cache_dir: str) -> str | None:
     return extract_archive(cached_zip, font_name)
 
 
+ARCHIVE_EXTENSIONS = {'.zip', '.7z'}
+
+
 def extract_archive(archive_path: str, font_name: str | None) -> str | None:
     """从压缩包（ZIP/7z）提取字体"""
-    if archive_path.endswith('.7z'):
-        return extract_from_7z(archive_path, font_name)
-    else:
-        return extract_from_zip(archive_path, font_name)
+    from pathlib import Path
 
+    ext = Path(archive_path).suffix.lower()
+    extract_dir = archive_path[:-len(ext)] if ext in ARCHIVE_EXTENSIONS else archive_path
 
-def extract_from_7z(archive_path: str, font_name: str | None) -> str | None:
-    """从 7z 文件提取字体"""
-    extract_dir = archive_path.replace('.7z', '')
     if not os.path.exists(extract_dir):
-        print(f"  Extracting 7z...")
+        print(f"  Extracting {ext or 'archive'}...")
         try:
-            with py7zr.SevenZipFile(archive_path, 'r') as szf:
-                szf.extractall(extract_dir)
-        except Exception as e:
-            print(f"  Extract failed: {e}")
-            return None
-
-    return find_font_file(extract_dir, font_name)
-
-
-def extract_from_zip(zip_path: str, font_name: str | None) -> str | None:
-    """从 ZIP 文件提取字体"""
-    extract_dir = zip_path.replace('.zip', '')
-    if not os.path.exists(extract_dir):
-        print(f"  Extracting...")
-        try:
-            with zipfile.ZipFile(zip_path, 'r') as zf:
-                zf.extractall(extract_dir)
+            if ext == '.7z':
+                with py7zr.SevenZipFile(archive_path, 'r') as szf:
+                    szf.extractall(extract_dir)
+            else:
+                with zipfile.ZipFile(archive_path, 'r') as zf:
+                    zf.extractall(extract_dir)
         except Exception as e:
             print(f"  Extract failed: {e}")
             return None
@@ -172,37 +160,27 @@ def extract_from_zip(zip_path: str, font_name: str | None) -> str | None:
 
 def find_font_file(extract_dir: str, font_name: str | None) -> str | None:
     """在解压目录中查找字体文件"""
-    # First pass: look for Regular, try to match font name (looser matching)
     candidates = []
+    fallback = None
+
     for root, dirs, files in os.walk(extract_dir):
         for f in files:
             if f.endswith('.ttf') or f.endswith('.otf'):
                 font_path = os.path.join(root, f)
-                # Check for regular weight
+                if fallback is None:
+                    fallback = font_path
                 is_regular = 'Regular' in f or '-Regular' in f or 'normal' in f.lower()
-                # Check if font name matches (if we have one) - looser matching: only check if any part matches
                 matches_name = True
                 if font_name:
-                    # Strip leading numbers like "09_" from Source Han releases
                     font_name_clean = ''.join(c for c in font_name.lower() if c.isalpha())
                     f_clean = ''.join(c for c in f.lower() if c.isalpha())
                     matches_name = font_name_clean in f_clean
                 if matches_name:
-                    candidates.append((is_regular, font_path))
                     if is_regular:
                         return font_path
+                    candidates.append(font_path)
 
-    # If we have any candidates, return the first one
-    if candidates:
-        return candidates[0][1]
-
-    # Fallback: return any font found
-    for root, dirs, files in os.walk(extract_dir):
-        for f in files:
-            if f.endswith('.ttf') or f.endswith('.otf'):
-                return os.path.join(root, f)
-
-    return None
+    return candidates[0] if candidates else fallback
 
 
 def resolve_font_path(path: str, cache_dir: str) -> str | None:
