@@ -234,8 +234,10 @@ def merge(en_path: str, zh_path: str, zh_index: int, output_name: str, output_di
     try:
         # 提取中文字体
         zh_sub = os.path.join(td, 'zh.ttf')
-        run_subset(['pyftsubset', zh_path, f'--font-number={zh_index}', '--glyphs=*',
-                    f'--output-file={zh_sub}'])
+        if zh_path.endswith('.ttc'):
+            run_subset(['pyftsubset', zh_path, f'--font-number={zh_index}', '--glyphs=*', f'--output-file={zh_sub}'])
+        else:
+            run_subset(['pyftsubset', zh_path, '--glyphs=*', f'--output-file={zh_sub}'])
 
         # 提取英文字体
         en_sub = os.path.join(td, 'en.ttf')
