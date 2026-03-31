@@ -29,6 +29,8 @@ Each font entry supports:
 - `download`: Direct download URL (ZIP or TTF/OTF)
 - `stars`: GitHub stars count
 
+**Important:** Do NOT modify the font list (chinese-fonts and english-fonts arrays) in pyproject.toml unless explicitly requested by the user.
+
 ## Architecture
 
 Single-file Python script (`font_merge.py`):
