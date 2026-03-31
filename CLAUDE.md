@@ -26,7 +26,7 @@ Edit `pyproject.toml` `[tool.font-merge]` section:
 Each font entry supports:
 - `name`: Font name for output
 - `github`: GitHub repository URL
-- `download`: Direct download URL (ZIP or TTF/OTF)
+- `download`: Direct download URL (ZIP, 7z, or TTF/OTF)
 - `stars`: GitHub stars count
 
 **Important:** Do NOT modify the font list (chinese-fonts and english-fonts arrays) in pyproject.toml unless explicitly requested by the user.
@@ -36,7 +36,7 @@ Each font entry supports:
 Single-file Python script (`font_merge.py`):
 
 1. **Config loading**: Reads `pyproject.toml` using `tomllib`
-2. **Font resolution**: Downloads remote fonts via `httpx`, extracts ZIPs, caches locally
+2. **Font resolution**: Downloads remote fonts via `httpx`, extracts ZIP/7z archives, caches locally
 3. **Merge process**:
    - Uses `pyftsubset` to extract glyph subsets
    - Loads fonts with `fontTools.ttLib.TTFont`
@@ -49,12 +49,12 @@ Single-file Python script (`font_merge.py`):
 ## Font Sources
 
 Current configuration uses GitHub Stars ranked fonts:
-- Chinese: LXGW WenKai, Source Han Sans, Smiley Sans, Source Han Serif, Noto CJK
-- English: Fira Code, Cascadia Code, Maple Font, Iosevka, Source Code Pro, etc. (top 20 monospace)
+- Chinese: LXGW WenKai, Source Han Sans, Sarasa Gothic, Source Han Serif, Zhuque Fangsong
+- English: Fira Code, Cascadia Code, Maple Font, Iosevka, Source Code Pro, Monaspace, Hack, JetBrains Mono, IBM Plex Mono, Monocraft, Intel One Mono, Monoid, Fantasque Sans, Hasklig, Mononoki, Recursive, Victor Mono, Cozette, Geist Mono, Meslo LG
 
 ## Dependencies
 
 - Python 3.14+
-- fonttools (for TTFont manipulation)
+- fonttools (for TTFont manipulation and pyftsubset)
 - httpx (for font downloads)
-- pyftsubset (bundled with fonttools, used via subprocess)
+- py7zr (for 7z archive extraction)
