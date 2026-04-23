@@ -71,7 +71,46 @@ english-fonts = [
 ]
 
 # 输出目录
-output-dir = "output"
+output-dir = "fonts/output"
 
 # 缓存目录 (用于下载的字体)
-cache-dir = "cache"
+cache-dir = "fonts/cache"
+
+# 构建 profiles
+[tool.font-merge.profiles]
+[tool.font-merge.profiles.dev]
+# 开发用：少量组合快速测试
+chinese = ["LXGWWenKai"]
+english = ["FiraCode", "JetBrainsMono"]
+
+[tool.font-merge.profiles.full]
+# 完整：所有组合
+chinese = [
+    "LXGWWenKai",
+    "SourceHanSansSC",
+    "SarasaGothicSC",
+    "SourceHanSerifSC",
+    "ZhuqueFangsong",
+]
+english = [
+    "FiraCode",
+    "CascadiaCode",
+    "MapleFont",
+    "Iosevka",
+    "SourceCodePro",
+    "Monaspace",
+    "Hack",
+    "JetBrainsMono",
+    "IBMPlexMono",
+    "Monocraft",
+    "IntelOneMono",
+    "Monoid",
+    "FantasqueSans",
+    "Hasklig",
+    "Mononoki",
+    "Recursive",
+    "VictorMono",
+    "Cozette",
+    "GeistMono",
+    "MesloLG",
+]
