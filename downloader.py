@@ -150,7 +150,7 @@ def find_font_file(extract_dir: str, font_name: str | None) -> str | None:
                     other_matches.append(os.path.join(root, f))
             elif font_name_clean in f_clean:
                 score = len(font_name_clean) / len(f_clean)
-                if score >= 0.7:
+                if score >= 0.3:
                     if 'regular' in f_lower or '-r.' in f_lower:
                         regular_match = os.path.join(root, f)
                     elif 'normal' in f_lower:
