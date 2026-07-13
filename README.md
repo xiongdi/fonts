@@ -36,6 +36,7 @@ cache-dir = "cache"
 ```
 
 每个字体支持以下字段：
+
 - `name`: 输出字体名称
 - `github`: GitHub 仓库地址
 - `download`: 下载链接（ZIP 或 TTF/OTF）
@@ -45,38 +46,38 @@ cache-dir = "cache"
 
 ### 中文字体 (5款)
 
-| 字体 | Stars | GitHub |
-|------|-------|--------|
-| 霞鹜文楷 LXGW WenKai | 23.7k | [lxgw/LxgwWenKai](https://github.com/lxgw/LxgwWenKai) |
-| 思源黑体 Source Han Sans | 16.4k | [adobe-fonts/source-han-sans](https://github.com/adobe-fonts/source-han-sans) |
-| 更纱黑体 Sarasa Gothic | 12.0k | [be5invis/Sarasa-Gothic](https://github.com/be5invis/Sarasa-Gothic) |
-| 思源宋体 Source Han Serif | 9.4k | [adobe-fonts/source-han-serif](https://github.com/adobe-fonts/source-han-serif) |
-| 朱雀仿宋 Zhuque Fangsong | 3.3k | [TrionesType/zhuque](https://github.com/TrionesType/zhuque) |
+| 字体                      | Stars | GitHub                                                                          |
+| ------------------------- | ----- | ------------------------------------------------------------------------------- |
+| 霞鹜文楷 LXGW WenKai      | 23.7k | [lxgw/LxgwWenKai](https://github.com/lxgw/LxgwWenKai)                           |
+| 思源黑体 Source Han Sans  | 16.4k | [adobe-fonts/source-han-sans](https://github.com/adobe-fonts/source-han-sans)   |
+| 更纱黑体 Sarasa Gothic    | 12.0k | [be5invis/Sarasa-Gothic](https://github.com/be5invis/Sarasa-Gothic)             |
+| 思源宋体 Source Han Serif | 9.4k  | [adobe-fonts/source-han-serif](https://github.com/adobe-fonts/source-han-serif) |
+| 朱雀仿宋 Zhuque Fangsong  | 3.3k  | [TrionesType/zhuque](https://github.com/TrionesType/zhuque)                     |
 
 ### 英文等宽字体 (20款)
 
-| 字体 | Stars | GitHub |
-|------|-------|--------|
-| Fira Code | 81.4k | [tonsky/FiraCode](https://github.com/tonsky/FiraCode) |
-| Cascadia Code | 27.6k | [microsoft/cascadia-code](https://github.com/microsoft/cascadia-code) |
-| Maple Font | 24.8k | [subframe7536/maple-font](https://github.com/subframe7536/maple-font) |
-| Iosevka | 21.9k | [be5invis/Iosevka](https://github.com/be5invis/Iosevka) |
+| 字体            | Stars | GitHub                                                                        |
+| --------------- | ----- | ----------------------------------------------------------------------------- |
+| Fira Code       | 81.4k | [tonsky/FiraCode](https://github.com/tonsky/FiraCode)                         |
+| Cascadia Code   | 27.6k | [microsoft/cascadia-code](https://github.com/microsoft/cascadia-code)         |
+| Maple Font      | 24.8k | [subframe7536/maple-font](https://github.com/subframe7536/maple-font)         |
+| Iosevka         | 21.9k | [be5invis/Iosevka](https://github.com/be5invis/Iosevka)                       |
 | Source Code Pro | 20.4k | [adobe-fonts/source-code-pro](https://github.com/adobe-fonts/source-code-pro) |
-| Monaspace | 18.7k | [githubnext/monaspace](https://github.com/githubnext/monaspace) |
-| Hack | 17.2k | [source-foundry/Hack](https://github.com/source-foundry/Hack) |
-| JetBrains Mono | 12.5k | [JetBrains/JetBrainsMono](https://github.com/JetBrains/JetBrainsMono) |
-| IBM Plex Mono | 11.3k | [IBM/plex](https://github.com/IBM/plex) |
-| Monocraft | 10.0k | [IdreesInc/Monocraft](https://github.com/IdreesInc/Monocraft) |
-| Intel One Mono | 9.9k | [intel/intel-one-mono](https://github.com/intel/intel-one-mono) |
-| Monoid | 8.0k | [larsenwork/monoid](https://github.com/larsenwork/monoid) |
-| Fantasque Sans | 7.3k | [belluzj/fantasque-sans](https://github.com/belluzj/fantasque-sans) |
-| Hasklig | 5.8k | [i-tu/Hasklig](https://github.com/i-tu/Hasklig) |
-| Mononoki | 4.6k | [madmalik/mononoki](https://github.com/madmalik/mononoki) |
-| Recursive | 3.7k | [arrowtype/recursive](https://github.com/arrowtype/recursive) |
-| Victor Mono | 3.7k | [rubjo/victor-mono](https://github.com/rubjo/victor-mono) |
-| Cozette | 3.5k | [the-moonwitch/Cozette](https://github.com/the-moonwitch/Cozette) |
-| Geist Mono | 3.3k | [vercel/geist-font](https://github.com/vercel/geist-font) |
-| Meslo LG | 2.7k | [andreberg/Meslo-Font](https://github.com/andreberg/Meslo-Font) |
+| Monaspace       | 18.7k | [githubnext/monaspace](https://github.com/githubnext/monaspace)               |
+| Hack            | 17.2k | [source-foundry/Hack](https://github.com/source-foundry/Hack)                 |
+| JetBrains Mono  | 12.5k | [JetBrains/JetBrainsMono](https://github.com/JetBrains/JetBrainsMono)         |
+| IBM Plex Mono   | 11.3k | [IBM/plex](https://github.com/IBM/plex)                                       |
+| Monocraft       | 10.0k | [IdreesInc/Monocraft](https://github.com/IdreesInc/Monocraft)                 |
+| Intel One Mono  | 9.9k  | [intel/intel-one-mono](https://github.com/intel/intel-one-mono)               |
+| Monoid          | 8.0k  | [larsenwork/monoid](https://github.com/larsenwork/monoid)                     |
+| Fantasque Sans  | 7.3k  | [belluzj/fantasque-sans](https://github.com/belluzj/fantasque-sans)           |
+| Hasklig         | 5.8k  | [i-tu/Hasklig](https://github.com/i-tu/Hasklig)                               |
+| Mononoki        | 4.6k  | [madmalik/mononoki](https://github.com/madmalik/mononoki)                     |
+| Recursive       | 3.7k  | [arrowtype/recursive](https://github.com/arrowtype/recursive)                 |
+| Victor Mono     | 3.7k  | [rubjo/victor-mono](https://github.com/rubjo/victor-mono)                     |
+| Cozette         | 3.5k  | [the-moonwitch/Cozette](https://github.com/the-moonwitch/Cozette)             |
+| Geist Mono      | 3.3k  | [vercel/geist-font](https://github.com/vercel/geist-font)                     |
+| Meslo LG        | 2.7k  | [andreberg/Meslo-Font](https://github.com/andreberg/Meslo-Font)               |
 
 ## 依赖
 
