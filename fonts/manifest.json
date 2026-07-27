@@ -1,155 +1,155 @@
 {
   "version": "1.0",
-  "updated": 1776927915.701947,
+  "updated": 1778737381.0628846,
   "sources": {
     "LXGWWenKai": {
-      "path": "fonts/cache\\LXGWWenKai-Regular.ttf",
-      "mtime": 1776926901.5171156,
+      "path": "fonts/cache/LXGWWenKai-Regular.ttf",
+      "mtime": 1778722477.7247252,
       "size": 25575676,
       "status": "ok"
     },
     "SourceHanSansSC": {
-      "path": "fonts/cache\\09_SourceHanSansSC\\OTF\\SimplifiedChinese\\SourceHanSansSC-Regular.otf",
-      "mtime": 1776926915.8109462,
+      "path": "fonts/cache/09_SourceHanSansSC/OTF/SimplifiedChinese/SourceHanSansSC-Regular.otf",
+      "mtime": 1778735280.2448869,
       "size": 16529832,
       "status": "ok"
     },
     "SarasaGothicSC": {
-      "path": "fonts/cache\\SarasaGothicSC-TTF-1.0.37\\SarasaGothicSC-Regular.ttf",
+      "path": "fonts/cache/SarasaGothicSC-TTF-1.0.37/SarasaGothicSC-Regular.ttf",
       "mtime": 1774751962.0109253,
       "size": 24047772,
       "status": "ok"
     },
     "SourceHanSerifSC": {
-      "path": "fonts/cache\\09_SourceHanSerifSC\\OTF\\SimplifiedChinese\\SourceHanSerifSC-Regular.otf",
-      "mtime": 1776926947.332545,
+      "path": "fonts/cache/09_SourceHanSerifSC/OTF/SimplifiedChinese/SourceHanSerifSC-Regular.otf",
+      "mtime": 1778735319.5562625,
       "size": 24543332,
       "status": "ok"
     },
     "ZhuqueFangsong": {
-      "path": "fonts/cache\\ZhuqueFangsong-v0.212\\ZhuqueFangsong-Regular.ttf",
-      "mtime": 1776926950.6635964,
+      "path": "fonts/cache/ZhuqueFangsong-v0.212/ZhuqueFangsong-Regular.ttf",
+      "mtime": 1778726257.4471934,
       "size": 8824084,
       "status": "ok"
     },
     "FiraCode": {
-      "path": "fonts/cache\\Fira_Code_v6.2\\ttf\\FiraCode-Regular.ttf",
-      "mtime": 1776926952.2782967,
+      "path": "fonts/cache/Fira_Code_v6.2/ttf/FiraCode-Regular.ttf",
+      "mtime": 1778734902.1989233,
       "size": 289624,
       "status": "ok"
     },
     "CascadiaCode": {
-      "path": "fonts/cache\\CascadiaCode-2407.24\\otf\\static\\CascadiaCode-Regular.otf",
-      "mtime": 1776926973.8349268,
-      "size": 364916,
+      "path": "fonts/cache/CascadiaCode-2407.24/ttf/static/CascadiaMonoNF-Regular.ttf",
+      "mtime": 1778735337.7380037,
+      "size": 3328552,
       "status": "ok"
     },
     "MapleFont": {
-      "path": "fonts/cache\\MapleMono-TTF\\MapleMono-Regular.ttf",
-      "mtime": 1776926976.9858887,
+      "path": "fonts/cache/MapleMono-TTF/MapleMono-Regular.ttf",
+      "mtime": 1778735788.0170815,
       "size": 265024,
       "status": "ok"
     },
     "Iosevka": {
-      "path": "fonts/cache\\PkgTTC-Iosevka-34.3.0\\Iosevka-Regular.ttc",
-      "mtime": 1776926993.6268764,
+      "path": "fonts/cache/PkgTTC-Iosevka-34.3.0/Iosevka-Regular.ttc",
+      "mtime": 1778735789.2724533,
       "size": 50041356,
       "status": "ok"
     },
     "SourceCodePro": {
-      "path": "fonts/cache\\TTF-source-code-pro-2.042R-u_1.062R-i\\TTF\\SourceCodePro-Regular.ttf",
-      "mtime": 1776926997.103524,
+      "path": "fonts/cache/TTF-source-code-pro-2.042R-u_1.062R-i/TTF/SourceCodePro-Regular.ttf",
+      "mtime": 1778727084.84284,
       "size": 210312,
       "status": "ok"
     },
     "Monaspace": {
-      "path": "fonts/cache\\monaspace-frozen-v1.400\\Frozen Fonts\\Monaspace Argon\\MonaspaceArgonFrozen-Regular.ttf",
-      "mtime": 1776927005.805359,
-      "size": 730736,
+      "path": "fonts/cache/monaspace-frozen-v1.400/Frozen Fonts/Monaspace Neon/MonaspaceNeonFrozen-WideRegular.ttf",
+      "mtime": 1778727978.6834836,
+      "size": 726912,
       "status": "ok"
     },
     "Hack": {
-      "path": "fonts/cache\\Hack-v3.003-ttf\\ttf\\Hack-Regular.ttf",
-      "mtime": 1776927007.8026953,
+      "path": "fonts/cache/Hack-v3.003-ttf/ttf/Hack-Regular.ttf",
+      "mtime": 1778728007.716421,
       "size": 309408,
       "status": "ok"
     },
     "JetBrainsMono": {
-      "path": "fonts/cache\\JetBrainsMono-2.304\\fonts\\ttf\\JetBrainsMono-Regular.ttf",
-      "mtime": 1776927009.4952312,
-      "size": 273900,
+      "path": "fonts/cache/JetBrainsMono-2.304/fonts/ttf/JetBrainsMonoNL-Regular.ttf",
+      "mtime": 1778728332.1527448,
+      "size": 208576,
       "status": "ok"
     },
     "IBMPlexMono": {
-      "path": "fonts/cache\\ibm-plex-mono\\ibm-plex-mono\\fonts\\complete\\otf\\IBMPlexMono-Regular.otf",
-      "mtime": 1776927011.5478375,
-      "size": 82328,
+      "path": "fonts/cache/ibm-plex-mono/ibm-plex-mono/fonts/complete/ttf/IBMPlexMono-Regular.ttf",
+      "mtime": 1778728578.7046402,
+      "size": 155940,
       "status": "ok"
     },
     "Monocraft": {
-      "path": "fonts/cache\\Monocraft-ttf\\Monocraft-ttf\\Monocraft.ttf",
-      "mtime": 1776927013.513297,
+      "path": "fonts/cache/Monocraft-ttf/Monocraft-ttf/Monocraft.ttf",
+      "mtime": 1778728585.6314433,
       "size": 210192,
       "status": "ok"
     },
     "IntelOneMono": {
-      "path": "fonts/cache\\ttf\\ttf\\IntelOneMono-Bold.ttf",
-      "mtime": 1776927029.9223797,
-      "size": 124708,
+      "path": "fonts/cache/ttf/ttf/IntelOneMono-Regular.ttf",
+      "mtime": 1778728591.7860765,
+      "size": 125928,
       "status": "ok"
     },
     "Hasklig": {
-      "path": "fonts/cache\\Hasklig-1.2\\OTF\\Hasklig-Regular.otf",
-      "mtime": 1776927040.7036736,
-      "size": 141676,
+      "path": "fonts/cache/Hasklig-1.2/TTF/Hasklig-Regular.ttf",
+      "mtime": 1778728739.3082209,
+      "size": 148832,
       "status": "ok"
     },
     "VictorMono": {
-      "path": "fonts/cache\\VictorMono.ttf",
-      "mtime": 1776927069.4752207,
+      "path": "fonts/cache/VictorMono.ttf",
+      "mtime": 1778728978.8385022,
       "size": 131644,
       "status": "ok"
     },
     "Monoid": {
-      "path": "fonts/cache\\Monoid\\MonoidNerdFont-Regular.ttf",
-      "mtime": 1776927037.366237,
-      "size": 2355616,
+      "path": "fonts/cache/Monoid/MonoidNerdFontMono-Regular.ttf",
+      "mtime": 1778728699.998474,
+      "size": 2391280,
       "status": "ok"
     },
     "FantasqueSans": {
-      "path": "fonts/cache\\FantasqueSansMono-Normal\\OTF\\FantasqueSansMono-Regular.otf",
-      "mtime": 1776927038.8868988,
-      "size": 133572,
+      "path": "fonts/cache/FantasqueSansMono-Normal/TTF/FantasqueSansMono-Regular.ttf",
+      "mtime": 1778728721.0534775,
+      "size": 168008,
       "status": "ok"
     },
     "Mononoki": {
-      "path": "fonts/cache\\mononoki\\mononoki-Regular.otf",
-      "mtime": 1776927043.5317466,
-      "size": 67980,
+      "path": "fonts/cache/mononoki/mononoki-Regular.ttf",
+      "mtime": 1778728746.9813266,
+      "size": 121296,
       "status": "ok"
     },
     "Recursive": {
-      "path": "fonts/cache\\ArrowType-Recursive-1.085\\ArrowType-Recursive-1.085\\Recursive_Code\\RecMonoCasual\\RecMonoCasual-Regular-1.085.ttf",
-      "mtime": 1776927057.9645603,
-      "size": 483004,
+      "path": "fonts/cache/ArrowType-Recursive-1.085/ArrowType-Recursive-1.085/Recursive_Desktop/separate_statics/TTF/RecursiveSansCslSt-Regular.ttf",
+      "mtime": 1778728976.7167757,
+      "size": 418676,
       "status": "ok"
     },
     "Cozette": {
-      "path": "fonts/cache\\CozetteVector.ttf",
-      "mtime": 1776927078.6080875,
+      "path": "fonts/cache/CozetteVector.ttf",
+      "mtime": 1778728987.8427446,
       "size": 649328,
       "status": "ok"
     },
     "GeistMono": {
-      "path": "fonts/cache\\geist-font-1.8.0\\geist-font-1.8.0\\fonts\\Geist\\otf\\Geist-Regular.otf",
-      "mtime": 1776927080.7122018,
-      "size": 157416,
+      "path": "fonts/cache/geist-font-1.8.0/geist-font-1.8.0/fonts/GeistMono/ttf/GeistMono-Regular.ttf",
+      "mtime": 1778728996.0826716,
+      "size": 148364,
       "status": "ok"
     },
     "MesloLG": {
-      "path": "fonts/cache\\Meslo\\MesloLGLDZNerdFont-Regular.ttf",
-      "mtime": 1776927122.5390236,
-      "size": 2853588,
+      "path": "fonts/cache/Meslo/MesloLGLNerdFontMono-Regular.ttf",
+      "mtime": 1778729008.1922154,
+      "size": 2832156,
       "status": "ok"
     }
   },
@@ -157,16 +157,800 @@
     "LXGWWenKai+FiraCode": {
       "zh": "LXGWWenKai",
       "en": "FiraCode",
-      "path": "fonts/output\\LXGWWenKai+FiraCode.otf",
-      "mtime": 1776927914.914822,
+      "path": "fonts/output/LXGWWenKai+FiraCode.otf",
+      "mtime": 1778737043.0974786,
       "dirty": false,
       "status": "ok"
     },
     "LXGWWenKai+JetBrainsMono": {
       "zh": "LXGWWenKai",
       "en": "JetBrainsMono",
-      "path": "fonts/output\\LXGWWenKai+JetBrainsMono.otf",
-      "mtime": 1776927915.0728226,
+      "path": "fonts/output/LXGWWenKai+JetBrainsMono.otf",
+      "mtime": 1778737042.0780392,
+      "dirty": false,
+      "status": "ok"
+    },
+    "LXGWWenKai+Iosevka": {
+      "zh": "LXGWWenKai",
+      "en": "Iosevka",
+      "path": "fonts/output/LXGWWenKai+Iosevka.otf",
+      "mtime": 1778737016.8374937,
+      "dirty": false,
+      "status": "ok"
+    },
+    "LXGWWenKai+IBMPlexMono": {
+      "zh": "LXGWWenKai",
+      "en": "IBMPlexMono",
+      "path": "fonts/output/LXGWWenKai+IBMPlexMono.otf",
+      "mtime": 1778737042.87025,
+      "dirty": false,
+      "status": "ok"
+    },
+    "LXGWWenKai+Monoid": {
+      "zh": "LXGWWenKai",
+      "en": "Monoid",
+      "path": "fonts/output/LXGWWenKai+Monoid.otf",
+      "mtime": 1778737042.9184864,
+      "dirty": false,
+      "status": "ok"
+    },
+    "LXGWWenKai+Hack": {
+      "zh": "LXGWWenKai",
+      "en": "Hack",
+      "path": "fonts/output/LXGWWenKai+Hack.otf",
+      "mtime": 1778737042.968968,
+      "dirty": false,
+      "status": "ok"
+    },
+    "LXGWWenKai+SourceCodePro": {
+      "zh": "LXGWWenKai",
+      "en": "SourceCodePro",
+      "path": "fonts/output/LXGWWenKai+SourceCodePro.otf",
+      "mtime": 1778737043.0535135,
+      "dirty": false,
+      "status": "ok"
+    },
+    "LXGWWenKai+CascadiaCode": {
+      "zh": "LXGWWenKai",
+      "en": "CascadiaCode",
+      "path": "fonts/output/LXGWWenKai+CascadiaCode.otf",
+      "mtime": 1778737043.0640647,
+      "dirty": false,
+      "status": "ok"
+    },
+    "LXGWWenKai+Monaspace": {
+      "zh": "LXGWWenKai",
+      "en": "Monaspace",
+      "path": "fonts/output/LXGWWenKai+Monaspace.otf",
+      "mtime": 1778737043.072683,
+      "dirty": false,
+      "status": "ok"
+    },
+    "LXGWWenKai+MapleFont": {
+      "zh": "LXGWWenKai",
+      "en": "MapleFont",
+      "path": "fonts/output/LXGWWenKai+MapleFont.otf",
+      "mtime": 1778737043.1991973,
+      "dirty": false,
+      "status": "ok"
+    },
+    "LXGWWenKai+Monocraft": {
+      "zh": "LXGWWenKai",
+      "en": "Monocraft",
+      "path": "fonts/output/LXGWWenKai+Monocraft.otf",
+      "mtime": 1778737043.216975,
+      "dirty": false,
+      "status": "ok"
+    },
+    "LXGWWenKai+IntelOneMono": {
+      "zh": "LXGWWenKai",
+      "en": "IntelOneMono",
+      "path": "fonts/output/LXGWWenKai+IntelOneMono.otf",
+      "mtime": 1778737043.4254417,
+      "dirty": false,
+      "status": "ok"
+    },
+    "LXGWWenKai+FantasqueSans": {
+      "zh": "LXGWWenKai",
+      "en": "FantasqueSans",
+      "path": "fonts/output/LXGWWenKai+FantasqueSans.otf",
+      "mtime": 1778737045.136664,
+      "dirty": false,
+      "status": "ok"
+    },
+    "LXGWWenKai+Hasklig": {
+      "zh": "LXGWWenKai",
+      "en": "Hasklig",
+      "path": "fonts/output/LXGWWenKai+Hasklig.otf",
+      "mtime": 1778737070.4775562,
+      "dirty": false,
+      "status": "ok"
+    },
+    "LXGWWenKai+Mononoki": {
+      "zh": "LXGWWenKai",
+      "en": "Mononoki",
+      "path": "fonts/output/LXGWWenKai+Mononoki.otf",
+      "mtime": 1778737072.2414308,
+      "dirty": false,
+      "status": "ok"
+    },
+    "LXGWWenKai+Recursive": {
+      "zh": "LXGWWenKai",
+      "en": "Recursive",
+      "path": "fonts/output/LXGWWenKai+Recursive.otf",
+      "mtime": 1778737072.6641028,
+      "dirty": false,
+      "status": "ok"
+    },
+    "LXGWWenKai+MesloLG": {
+      "zh": "LXGWWenKai",
+      "en": "MesloLG",
+      "path": "fonts/output/LXGWWenKai+MesloLG.otf",
+      "mtime": 1778737072.7036734,
+      "dirty": false,
+      "status": "ok"
+    },
+    "LXGWWenKai+GeistMono": {
+      "zh": "LXGWWenKai",
+      "en": "GeistMono",
+      "path": "fonts/output/LXGWWenKai+GeistMono.otf",
+      "mtime": 1778737072.8464324,
+      "dirty": false,
+      "status": "ok"
+    },
+    "LXGWWenKai+VictorMono": {
+      "zh": "LXGWWenKai",
+      "en": "VictorMono",
+      "path": "fonts/output/LXGWWenKai+VictorMono.otf",
+      "mtime": 1778737073.3560014,
+      "dirty": false,
+      "status": "ok"
+    },
+    "LXGWWenKai+Cozette": {
+      "zh": "LXGWWenKai",
+      "en": "Cozette",
+      "path": "fonts/output/LXGWWenKai+Cozette.otf",
+      "mtime": 1778737074.009637,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SourceHanSansSC+Iosevka": {
+      "zh": "SourceHanSansSC",
+      "en": "Iosevka",
+      "path": "fonts/output/SourceHanSansSC+Iosevka.otf",
+      "mtime": 1778737099.7669735,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SourceHanSansSC+MapleFont": {
+      "zh": "SourceHanSansSC",
+      "en": "MapleFont",
+      "path": "fonts/output/SourceHanSansSC+MapleFont.otf",
+      "mtime": 1778737100.4281473,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SourceHanSansSC+FiraCode": {
+      "zh": "SourceHanSansSC",
+      "en": "FiraCode",
+      "path": "fonts/output/SourceHanSansSC+FiraCode.otf",
+      "mtime": 1778737100.5820017,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SourceHanSansSC+SourceCodePro": {
+      "zh": "SourceHanSansSC",
+      "en": "SourceCodePro",
+      "path": "fonts/output/SourceHanSansSC+SourceCodePro.otf",
+      "mtime": 1778737101.8589957,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SourceHanSansSC+CascadiaCode": {
+      "zh": "SourceHanSansSC",
+      "en": "CascadiaCode",
+      "path": "fonts/output/SourceHanSansSC+CascadiaCode.otf",
+      "mtime": 1778737103.0330393,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SourceHanSansSC+Monaspace": {
+      "zh": "SourceHanSansSC",
+      "en": "Monaspace",
+      "path": "fonts/output/SourceHanSansSC+Monaspace.otf",
+      "mtime": 1778737128.3512156,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SourceHanSansSC+IBMPlexMono": {
+      "zh": "SourceHanSansSC",
+      "en": "IBMPlexMono",
+      "path": "fonts/output/SourceHanSansSC+IBMPlexMono.otf",
+      "mtime": 1778737131.3334646,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SourceHanSansSC+Hack": {
+      "zh": "SourceHanSansSC",
+      "en": "Hack",
+      "path": "fonts/output/SourceHanSansSC+Hack.otf",
+      "mtime": 1778737131.5123782,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SourceHanSansSC+Monocraft": {
+      "zh": "SourceHanSansSC",
+      "en": "Monocraft",
+      "path": "fonts/output/SourceHanSansSC+Monocraft.otf",
+      "mtime": 1778737131.8713553,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SourceHanSansSC+JetBrainsMono": {
+      "zh": "SourceHanSansSC",
+      "en": "JetBrainsMono",
+      "path": "fonts/output/SourceHanSansSC+JetBrainsMono.otf",
+      "mtime": 1778737132.0074136,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SourceHanSansSC+Monoid": {
+      "zh": "SourceHanSansSC",
+      "en": "Monoid",
+      "path": "fonts/output/SourceHanSansSC+Monoid.otf",
+      "mtime": 1778737132.5976112,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SourceHanSansSC+IntelOneMono": {
+      "zh": "SourceHanSansSC",
+      "en": "IntelOneMono",
+      "path": "fonts/output/SourceHanSansSC+IntelOneMono.otf",
+      "mtime": 1778737132.5920372,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SarasaGothicSC+Iosevka": {
+      "zh": "SarasaGothicSC",
+      "en": "Iosevka",
+      "path": "fonts/output/SarasaGothicSC+Iosevka.otf",
+      "mtime": 1778737134.2372096,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SarasaGothicSC+FiraCode": {
+      "zh": "SarasaGothicSC",
+      "en": "FiraCode",
+      "path": "fonts/output/SarasaGothicSC+FiraCode.otf",
+      "mtime": 1778737148.3255365,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SarasaGothicSC+CascadiaCode": {
+      "zh": "SarasaGothicSC",
+      "en": "CascadiaCode",
+      "path": "fonts/output/SarasaGothicSC+CascadiaCode.otf",
+      "mtime": 1778737149.4072044,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SarasaGothicSC+MapleFont": {
+      "zh": "SarasaGothicSC",
+      "en": "MapleFont",
+      "path": "fonts/output/SarasaGothicSC+MapleFont.otf",
+      "mtime": 1778737149.4769826,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SarasaGothicSC+SourceCodePro": {
+      "zh": "SarasaGothicSC",
+      "en": "SourceCodePro",
+      "path": "fonts/output/SarasaGothicSC+SourceCodePro.otf",
+      "mtime": 1778737151.0077777,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SourceHanSansSC+FantasqueSans": {
+      "zh": "SourceHanSansSC",
+      "en": "FantasqueSans",
+      "path": "fonts/output/SourceHanSansSC+FantasqueSans.otf",
+      "mtime": 1778737155.69795,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SourceHanSansSC+Hasklig": {
+      "zh": "SourceHanSansSC",
+      "en": "Hasklig",
+      "path": "fonts/output/SourceHanSansSC+Hasklig.otf",
+      "mtime": 1778737157.468245,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SourceHanSansSC+Mononoki": {
+      "zh": "SourceHanSansSC",
+      "en": "Mononoki",
+      "path": "fonts/output/SourceHanSansSC+Mononoki.otf",
+      "mtime": 1778737159.31966,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SourceHanSansSC+Recursive": {
+      "zh": "SourceHanSansSC",
+      "en": "Recursive",
+      "path": "fonts/output/SourceHanSansSC+Recursive.otf",
+      "mtime": 1778737159.835605,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SourceHanSansSC+VictorMono": {
+      "zh": "SourceHanSansSC",
+      "en": "VictorMono",
+      "path": "fonts/output/SourceHanSansSC+VictorMono.otf",
+      "mtime": 1778737162.2503934,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SarasaGothicSC+Monaspace": {
+      "zh": "SarasaGothicSC",
+      "en": "Monaspace",
+      "path": "fonts/output/SarasaGothicSC+Monaspace.otf",
+      "mtime": 1778737164.3885002,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SarasaGothicSC+Hack": {
+      "zh": "SarasaGothicSC",
+      "en": "Hack",
+      "path": "fonts/output/SarasaGothicSC+Hack.otf",
+      "mtime": 1778737165.744327,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SarasaGothicSC+JetBrainsMono": {
+      "zh": "SarasaGothicSC",
+      "en": "JetBrainsMono",
+      "path": "fonts/output/SarasaGothicSC+JetBrainsMono.otf",
+      "mtime": 1778737166.1246536,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SarasaGothicSC+IBMPlexMono": {
+      "zh": "SarasaGothicSC",
+      "en": "IBMPlexMono",
+      "path": "fonts/output/SarasaGothicSC+IBMPlexMono.otf",
+      "mtime": 1778737166.8196278,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SarasaGothicSC+Monocraft": {
+      "zh": "SarasaGothicSC",
+      "en": "Monocraft",
+      "path": "fonts/output/SarasaGothicSC+Monocraft.otf",
+      "mtime": 1778737172.139947,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SarasaGothicSC+IntelOneMono": {
+      "zh": "SarasaGothicSC",
+      "en": "IntelOneMono",
+      "path": "fonts/output/SarasaGothicSC+IntelOneMono.otf",
+      "mtime": 1778737173.711392,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SarasaGothicSC+Monoid": {
+      "zh": "SarasaGothicSC",
+      "en": "Monoid",
+      "path": "fonts/output/SarasaGothicSC+Monoid.otf",
+      "mtime": 1778737175.808609,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SarasaGothicSC+FantasqueSans": {
+      "zh": "SarasaGothicSC",
+      "en": "FantasqueSans",
+      "path": "fonts/output/SarasaGothicSC+FantasqueSans.otf",
+      "mtime": 1778737176.0349057,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SarasaGothicSC+Hasklig": {
+      "zh": "SarasaGothicSC",
+      "en": "Hasklig",
+      "path": "fonts/output/SarasaGothicSC+Hasklig.otf",
+      "mtime": 1778737178.8546944,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SarasaGothicSC+Mononoki": {
+      "zh": "SarasaGothicSC",
+      "en": "Mononoki",
+      "path": "fonts/output/SarasaGothicSC+Mononoki.otf",
+      "mtime": 1778737180.478953,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SarasaGothicSC+Recursive": {
+      "zh": "SarasaGothicSC",
+      "en": "Recursive",
+      "path": "fonts/output/SarasaGothicSC+Recursive.otf",
+      "mtime": 1778737181.9142137,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SarasaGothicSC+VictorMono": {
+      "zh": "SarasaGothicSC",
+      "en": "VictorMono",
+      "path": "fonts/output/SarasaGothicSC+VictorMono.otf",
+      "mtime": 1778737182.4898098,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SarasaGothicSC+Cozette": {
+      "zh": "SarasaGothicSC",
+      "en": "Cozette",
+      "path": "fonts/output/SarasaGothicSC+Cozette.otf",
+      "mtime": 1778737182.8236165,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SourceHanSansSC+Cozette": {
+      "zh": "SourceHanSansSC",
+      "en": "Cozette",
+      "path": "fonts/output/SourceHanSansSC+Cozette.otf",
+      "mtime": 1778737184.1827116,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SourceHanSansSC+GeistMono": {
+      "zh": "SourceHanSansSC",
+      "en": "GeistMono",
+      "path": "fonts/output/SourceHanSansSC+GeistMono.otf",
+      "mtime": 1778737187.232322,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SarasaGothicSC+GeistMono": {
+      "zh": "SarasaGothicSC",
+      "en": "GeistMono",
+      "path": "fonts/output/SarasaGothicSC+GeistMono.otf",
+      "mtime": 1778737188.9055746,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SourceHanSansSC+MesloLG": {
+      "zh": "SourceHanSansSC",
+      "en": "MesloLG",
+      "path": "fonts/output/SourceHanSansSC+MesloLG.otf",
+      "mtime": 1778737188.9146242,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SarasaGothicSC+MesloLG": {
+      "zh": "SarasaGothicSC",
+      "en": "MesloLG",
+      "path": "fonts/output/SarasaGothicSC+MesloLG.otf",
+      "mtime": 1778737190.0764332,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SourceHanSerifSC+CascadiaCode": {
+      "zh": "SourceHanSerifSC",
+      "en": "CascadiaCode",
+      "path": "fonts/output/SourceHanSerifSC+CascadiaCode.otf",
+      "mtime": 1778737282.5551248,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SourceHanSerifSC+FiraCode": {
+      "zh": "SourceHanSerifSC",
+      "en": "FiraCode",
+      "path": "fonts/output/SourceHanSerifSC+FiraCode.otf",
+      "mtime": 1778737282.5971386,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SourceHanSerifSC+MapleFont": {
+      "zh": "SourceHanSerifSC",
+      "en": "MapleFont",
+      "path": "fonts/output/SourceHanSerifSC+MapleFont.otf",
+      "mtime": 1778737286.780536,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SourceHanSerifSC+Iosevka": {
+      "zh": "SourceHanSerifSC",
+      "en": "Iosevka",
+      "path": "fonts/output/SourceHanSerifSC+Iosevka.otf",
+      "mtime": 1778737287.1688776,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SourceHanSerifSC+SourceCodePro": {
+      "zh": "SourceHanSerifSC",
+      "en": "SourceCodePro",
+      "path": "fonts/output/SourceHanSerifSC+SourceCodePro.otf",
+      "mtime": 1778737287.4484885,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SourceHanSerifSC+Hack": {
+      "zh": "SourceHanSerifSC",
+      "en": "Hack",
+      "path": "fonts/output/SourceHanSerifSC+Hack.otf",
+      "mtime": 1778737289.780572,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SourceHanSerifSC+Monaspace": {
+      "zh": "SourceHanSerifSC",
+      "en": "Monaspace",
+      "path": "fonts/output/SourceHanSerifSC+Monaspace.otf",
+      "mtime": 1778737290.083137,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SourceHanSerifSC+JetBrainsMono": {
+      "zh": "SourceHanSerifSC",
+      "en": "JetBrainsMono",
+      "path": "fonts/output/SourceHanSerifSC+JetBrainsMono.otf",
+      "mtime": 1778737291.8617175,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SourceHanSerifSC+IBMPlexMono": {
+      "zh": "SourceHanSerifSC",
+      "en": "IBMPlexMono",
+      "path": "fonts/output/SourceHanSerifSC+IBMPlexMono.otf",
+      "mtime": 1778737295.192254,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SourceHanSerifSC+IntelOneMono": {
+      "zh": "SourceHanSerifSC",
+      "en": "IntelOneMono",
+      "path": "fonts/output/SourceHanSerifSC+IntelOneMono.otf",
+      "mtime": 1778737295.5620468,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SourceHanSerifSC+Monocraft": {
+      "zh": "SourceHanSerifSC",
+      "en": "Monocraft",
+      "path": "fonts/output/SourceHanSerifSC+Monocraft.otf",
+      "mtime": 1778737295.9250433,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SourceHanSerifSC+Monoid": {
+      "zh": "SourceHanSerifSC",
+      "en": "Monoid",
+      "path": "fonts/output/SourceHanSerifSC+Monoid.otf",
+      "mtime": 1778737297.768676,
+      "dirty": false,
+      "status": "ok"
+    },
+    "ZhuqueFangsong+Iosevka": {
+      "zh": "ZhuqueFangsong",
+      "en": "Iosevka",
+      "path": "fonts/output/ZhuqueFangsong+Iosevka.otf",
+      "mtime": 1778737298.5505044,
+      "dirty": false,
+      "status": "ok"
+    },
+    "ZhuqueFangsong+FiraCode": {
+      "zh": "ZhuqueFangsong",
+      "en": "FiraCode",
+      "path": "fonts/output/ZhuqueFangsong+FiraCode.otf",
+      "mtime": 1778737305.6765547,
+      "dirty": false,
+      "status": "ok"
+    },
+    "ZhuqueFangsong+MapleFont": {
+      "zh": "ZhuqueFangsong",
+      "en": "MapleFont",
+      "path": "fonts/output/ZhuqueFangsong+MapleFont.otf",
+      "mtime": 1778737306.0947895,
+      "dirty": false,
+      "status": "ok"
+    },
+    "ZhuqueFangsong+CascadiaCode": {
+      "zh": "ZhuqueFangsong",
+      "en": "CascadiaCode",
+      "path": "fonts/output/ZhuqueFangsong+CascadiaCode.otf",
+      "mtime": 1778737306.4459915,
+      "dirty": false,
+      "status": "ok"
+    },
+    "ZhuqueFangsong+SourceCodePro": {
+      "zh": "ZhuqueFangsong",
+      "en": "SourceCodePro",
+      "path": "fonts/output/ZhuqueFangsong+SourceCodePro.otf",
+      "mtime": 1778737309.377471,
+      "dirty": false,
+      "status": "ok"
+    },
+    "ZhuqueFangsong+Monaspace": {
+      "zh": "ZhuqueFangsong",
+      "en": "Monaspace",
+      "path": "fonts/output/ZhuqueFangsong+Monaspace.otf",
+      "mtime": 1778737315.0853693,
+      "dirty": false,
+      "status": "ok"
+    },
+    "ZhuqueFangsong+JetBrainsMono": {
+      "zh": "ZhuqueFangsong",
+      "en": "JetBrainsMono",
+      "path": "fonts/output/ZhuqueFangsong+JetBrainsMono.otf",
+      "mtime": 1778737315.9515321,
+      "dirty": false,
+      "status": "ok"
+    },
+    "ZhuqueFangsong+Hack": {
+      "zh": "ZhuqueFangsong",
+      "en": "Hack",
+      "path": "fonts/output/ZhuqueFangsong+Hack.otf",
+      "mtime": 1778737316.1119926,
+      "dirty": false,
+      "status": "ok"
+    },
+    "ZhuqueFangsong+IBMPlexMono": {
+      "zh": "ZhuqueFangsong",
+      "en": "IBMPlexMono",
+      "path": "fonts/output/ZhuqueFangsong+IBMPlexMono.otf",
+      "mtime": 1778737319.188201,
+      "dirty": false,
+      "status": "ok"
+    },
+    "ZhuqueFangsong+Monocraft": {
+      "zh": "ZhuqueFangsong",
+      "en": "Monocraft",
+      "path": "fonts/output/ZhuqueFangsong+Monocraft.otf",
+      "mtime": 1778737324.6972058,
+      "dirty": false,
+      "status": "ok"
+    },
+    "ZhuqueFangsong+IntelOneMono": {
+      "zh": "ZhuqueFangsong",
+      "en": "IntelOneMono",
+      "path": "fonts/output/ZhuqueFangsong+IntelOneMono.otf",
+      "mtime": 1778737325.5023344,
+      "dirty": false,
+      "status": "ok"
+    },
+    "ZhuqueFangsong+Monoid": {
+      "zh": "ZhuqueFangsong",
+      "en": "Monoid",
+      "path": "fonts/output/ZhuqueFangsong+Monoid.otf",
+      "mtime": 1778737326.3729858,
+      "dirty": false,
+      "status": "ok"
+    },
+    "ZhuqueFangsong+FantasqueSans": {
+      "zh": "ZhuqueFangsong",
+      "en": "FantasqueSans",
+      "path": "fonts/output/ZhuqueFangsong+FantasqueSans.otf",
+      "mtime": 1778737329.0810907,
+      "dirty": false,
+      "status": "ok"
+    },
+    "ZhuqueFangsong+Hasklig": {
+      "zh": "ZhuqueFangsong",
+      "en": "Hasklig",
+      "path": "fonts/output/ZhuqueFangsong+Hasklig.otf",
+      "mtime": 1778737334.5329876,
+      "dirty": false,
+      "status": "ok"
+    },
+    "ZhuqueFangsong+Mononoki": {
+      "zh": "ZhuqueFangsong",
+      "en": "Mononoki",
+      "path": "fonts/output/ZhuqueFangsong+Mononoki.otf",
+      "mtime": 1778737335.382475,
+      "dirty": false,
+      "status": "ok"
+    },
+    "ZhuqueFangsong+Recursive": {
+      "zh": "ZhuqueFangsong",
+      "en": "Recursive",
+      "path": "fonts/output/ZhuqueFangsong+Recursive.otf",
+      "mtime": 1778737336.5070972,
+      "dirty": false,
+      "status": "ok"
+    },
+    "ZhuqueFangsong+VictorMono": {
+      "zh": "ZhuqueFangsong",
+      "en": "VictorMono",
+      "path": "fonts/output/ZhuqueFangsong+VictorMono.otf",
+      "mtime": 1778737339.1385455,
+      "dirty": false,
+      "status": "ok"
+    },
+    "ZhuqueFangsong+Cozette": {
+      "zh": "ZhuqueFangsong",
+      "en": "Cozette",
+      "path": "fonts/output/ZhuqueFangsong+Cozette.otf",
+      "mtime": 1778737344.1876276,
+      "dirty": false,
+      "status": "ok"
+    },
+    "ZhuqueFangsong+GeistMono": {
+      "zh": "ZhuqueFangsong",
+      "en": "GeistMono",
+      "path": "fonts/output/ZhuqueFangsong+GeistMono.otf",
+      "mtime": 1778737344.546109,
+      "dirty": false,
+      "status": "ok"
+    },
+    "ZhuqueFangsong+MesloLG": {
+      "zh": "ZhuqueFangsong",
+      "en": "MesloLG",
+      "path": "fonts/output/ZhuqueFangsong+MesloLG.otf",
+      "mtime": 1778737345.049477,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SourceHanSerifSC+FantasqueSans": {
+      "zh": "SourceHanSerifSC",
+      "en": "FantasqueSans",
+      "path": "fonts/output/SourceHanSerifSC+FantasqueSans.otf",
+      "mtime": 1778737367.7283893,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SourceHanSerifSC+Hasklig": {
+      "zh": "SourceHanSerifSC",
+      "en": "Hasklig",
+      "path": "fonts/output/SourceHanSerifSC+Hasklig.otf",
+      "mtime": 1778737368.1527526,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SourceHanSerifSC+GeistMono": {
+      "zh": "SourceHanSerifSC",
+      "en": "GeistMono",
+      "path": "fonts/output/SourceHanSerifSC+GeistMono.otf",
+      "mtime": 1778737370.6973658,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SourceHanSerifSC+VictorMono": {
+      "zh": "SourceHanSerifSC",
+      "en": "VictorMono",
+      "path": "fonts/output/SourceHanSerifSC+VictorMono.otf",
+      "mtime": 1778737371.4604053,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SourceHanSerifSC+Recursive": {
+      "zh": "SourceHanSerifSC",
+      "en": "Recursive",
+      "path": "fonts/output/SourceHanSerifSC+Recursive.otf",
+      "mtime": 1778737378.7161288,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SourceHanSerifSC+MesloLG": {
+      "zh": "SourceHanSerifSC",
+      "en": "MesloLG",
+      "path": "fonts/output/SourceHanSerifSC+MesloLG.otf",
+      "mtime": 1778737379.3612475,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SourceHanSerifSC+Cozette": {
+      "zh": "SourceHanSerifSC",
+      "en": "Cozette",
+      "path": "fonts/output/SourceHanSerifSC+Cozette.otf",
+      "mtime": 1778737379.818083,
+      "dirty": false,
+      "status": "ok"
+    },
+    "SourceHanSerifSC+Mononoki": {
+      "zh": "SourceHanSerifSC",
+      "en": "Mononoki",
+      "path": "fonts/output/SourceHanSerifSC+Mononoki.otf",
+      "mtime": 1778737380.9743018,
       "dirty": false,
       "status": "ok"
     }
